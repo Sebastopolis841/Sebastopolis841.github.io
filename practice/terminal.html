@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>HTML practice</title>
+		<style>
+
+body{
+background-color: orange;
+}
+
+		</style>
+		<script src="js/validate.js"></script>
+	</head>
+
+	<body>
+		<h1>Basic Syntax</h1>
+
+		<p>Syntax is important in html because otherwise, your code may not work.</p>
+
+		<h2>Tags</h2>
+
+		<p>Tags are how you add or modify everything in html. These are marked by the greater/less than signs (&lt;/&gt;). Use these like you would use parenthises, and surround the tag with them. Tags will not show up in any text you write, but will modify other text. You will learn how to use these later.</p>
+
+		<p><br></p>
+
+		<h1>Adding Text</h1>
+		
+		<h2>Body Text</h2>
+
+		<p>Body text is one of the most important components of html. Body text is added using the tag <kbd>&lt;p&gt;</kbd>. Here is an example:
+
+	<p><br></p>
+		
+		<p>Input:</p>
+		<code>&lt;p&gt;Body text&lt;/p&gt;</code>
+		
+		<p>Output:</p>
+		<p>Body text</p>
+
+		<p><br></p>
+
+		<h2>Headings</h2>
+
+		<p>There are 6 levels of headings, level 1 being the most important, and level 6 being the least important.<br> Headings are added using the tag <kbd>&lt;h#&gt;</kbd>, where # is the level of heading you want to use. <br> Here is an exaple using <kbd>&lt;h3&gt;</kbd></p>
+
+		<p><br></p>
+		
+		<p>Input:</p>
+		<code>&lt;h3&gt;Heading&lt;/h3&gt;</code>
+		
+		<p>Output:</p>
+		<h3>Heading</h3>
+
+		<p><br></p>
+
+		<h2>Putting code in text</h2>
+		<h3>&lt;code&gt;</h3>
+
+		<p>The tag <kbd>&lt;code&gt;</kbd> is used to add single lines of code to your website. It works like <kbd>&lt;p&gt;</kbd>:, but in a <code>monospaced font</code>.
+
+		<p><br></p>
+
+		<p>Input:</p>
+		<code>&lt;code&gt;A bit of code&lt;</code>
+
+		<p>Output</p>
+		<code>A bit of code</code>
+
+		<p><br></p>
+
+		<h3>&lt;pre&gt;</h3>
+
+		<p>The tag <kbd>&lt;pre&gt;</kbd> is used to add multiple lines of code in a <code>monospaced font</code>.</p>
+
+		<p><br></p>
+
+		<p>Input:</p>
+		<pre>
+			&lt;pre&gt;
+				&lt;h1&gt;Heading&lt;/h1&gt;
+				&lt;p&gt;Body Text&lt;/p&gt;
+			&lt;/pre&gt;
+		</pre>
+		
+		<p>Output:</p>
+		<pre>
+			&lt;h1&gt;Heading&lt;/h1&gt;
+			&lt;p&gt;Body Text&lt;/p&gt;
+		</pre>
+
+		<p><br></p>
+
+		<h3>&lt;kbd&gt; and &lt;samp&gt;</h3>
+
+		<p>The tags <kbd>&lt;kbd&gt;</kbd> and <kbd>&lt;samp&gt;</kbd> are used for input and output respectively. <kbd>&lt;kbd&gt;</kbd> is use for short, keybord inputs, such as "<kbd>Ctrl + C</kbd>". <kbd>&lt;samp&gt;</kbd> is used for sample outputs such as "<samp>Invalid username or password.</samp>"</p>
+
+		<p><br></p>
+
+		<h2>Lists</h2>
+		<h3>Unordered lists</h3>
+		<p>An unordered list is a bulletpointed list and is added using the tag <kbd>&lt;ul&gt;</kbd>. To add items to the list, you can use the tag <kbd>&lt;li&gt;</kbd>. An unordered list is used to show a list without an order, such as a shopping list.</p>
+
+		<p><br></p>
+		
+		<p>Input:</p>
+		<pre>
+		&lt;ul&gt;
+			&lt;li&gt;Item 1&lt;/li&gt;
+			&lt;li&gt;Item 2&lt;/li&gt;
+			&lt;li&gt;Item 3&lt;/li&gt;
+		&lt;/ul&gt;
+		</pre>
+
+		<p>Output:</p>
+		<ul>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+
+		<p><br></p>
+
+		<h3>Ordered lists</h3>
+                <p>An ordered list is a numbered list and is added using the tag <kbd>&lt;ol&gt;</kbd>. To add items to the list, you can use the tag <kbd>&lt;li&gt;</kbd>. An ordered list is used to show a list with a certain order, such as a ranking list from a competition.</p>
+
+                <p><br></p>
+
+                <p>Input:</p>
+                <pre>
+                &lt;ol&gt;
+			&lt;li&gt;Item 1&lt;/li&gt;
+                        &lt;li&gt;Item 2&lt;/li&gt;
+                        &lt;li&gt;Item 3&lt;/li&gt;
+                &lt;/ol&gt;
+                </pre>
+
+                <p>Output:</p>
+                <ol>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                </ol>
+
+                <p><br></p>
+
+		<h3>Description lists</h3>
+		<p>A description list is a list where each item has a description and is added using the tag <kbd>&lt;dl&gt;</kbd>. To add items to the list, you can use the tag <kbd>&lt;dt&gt;</kbd>, and to add descriptions you can use <kbd>&lt;dd&gt;</kbd>. A description  list is used to show a list with descriptions, such as a dictionary.</p>
+
+                <p><br></p>
+
+                <p>Input:</p>
+                <pre>
+                &lt;dl&gt;
+			&lt;dt&gt;Item 1&lt;/dt&gt;
+			&lt;dd&gt;Description 1&lt;/dd&gt;
+                        &lt;dt&gt;Item 2&lt;/dt&gt;
+			&lt;dd&gt;Description 2&lt;/dd&gt;
+                        &lt;dt&gt;Item 3&lt;/dt&gt;
+			&lt;dd&gt;Description 3&lt;/dd&gt;
+                &lt;/dl&gt;
+                </pre>
+
+                <p>Output:</p>
+                <dl>
+                        <dt>Item 1</dt>
+			<dd>Description 1</dd>
+                        <dt>Item 2</dt>
+			<dd>Description 2</dd>
+                        <dt>Item 3</dt>
+			<dd>Description 3</dd>
+                </dl>
+
+                <p><br></p>
+
+		<h3>Nested lists</h3>
+		<p>Nested lists are lists within other lists, which do not have to be the same type of list as the one they are in. Nested lists are made by simply placing one list inside of an item from another. These lists are useful for stuff like teir lists.</p>
+
+		<p><br></p>
+
+		<p>Input:</p>
+		<pre>
+		&lt;ol&gt;
+			&lt;li&gt;Item 1
+				&lt;ul&gt;
+					&lt;li&gt;Item A&lt;/li&gt;
+					&lt;li&gt;Item B&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;Item 2
+				&lt;ol&gt;
+					&lt;li&gt;Item C&lt;/li&gt;
+					&lt;li&gt;Item D&lt;/li&gt;
+				&lt;/ol&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+		</pre>
+
+		<p>Output:</p>
+		<ol>
+			<li>Item 1
+				<ul>
+					<li>Item A</li>
+					<li>Item B</li>
+				</ul>
+			</li>
+			<li>Item 2
+				<ol>
+					<li>Item C</li>
+					<li>Item D</li>
+				</ol>
+			</li>
+		</ol>
+
+		<p><br></p>
+
+		<h1>In-line tags</h1>
+		<p>Most tags can be used inside of text, but here are some designed to be used in text. For example, <kbd>&lt;strong&gt;</kbd> makes text bold. I will be showing all of these on one line for simplicity.</p>
+
+		<p><br></p>
+
+		<p>Input:</p>
+		<code>&lt;p&gt; Normal &lt;strong&gt;bold&lt;/strong&gt; &lt;em&gt;italics&lt;/em&gt; &lt;u&gt;underlined&lt;/u&gt; &lt;sup&gt;superscript&lt;/sup&gt; &lt;sub&gt;subscript&lt;/sub&gt; &lt;del&gt;deleted&lt;/del&gt; &lt;mark&gt;highlighted&lt;/mark&gt;&lt;/p&gt;</code>
+
+		<p>Output:<p>
+		<p> Normal <strong>bold</strong> <em>italics</em> <u>underlined</u> <sup>superscript</sup> <sub>subscript</sub> <del>deleted</del> <mark>highlighted</mark></p>
+
