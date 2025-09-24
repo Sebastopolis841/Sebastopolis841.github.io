@@ -216,11 +216,43 @@ background-color: orange;
 		<h1>In-line tags</h1>
 		<p>Most tags can be used inside of text, but here are some designed to be used in text. For example, <kbd>&lt;strong&gt;</kbd> makes text bold. I will be showing all of these on one line for simplicity.</p>
 
+
+
+		<p>Input:</p>
+		<code>&lt;p&gt; Normal &lt;strong&gt;bold&lt;/strong&gt; &lt;em&gt;italics&lt;/em&gt; &lt;u&gt;underlined&lt;/u&gt; &lt;sup&gt;superscript&lt;/sup&gt; &lt;sub&gt;subscript&lt;/sub&gt; &lt;del&gt;deleted&lt;/del&gt; &lt;mark&gt;highlighted&lt;/mark&gt;&lt;/p&gt; &lt;q&gt;quote&lt;/q&gt;</code>
+
+		<p>Output:<p>
+		<p> Normal <strong>bold</strong> <em>italics</em> <u>underlined</u> <sup>superscript</sup> <sub>subscript</sub> <del>deleted</del> <mark>highlighted</mark> <q>quote</q></p>
+
+		<p><br></p>
+
+		<h1>Additional formatting</h1>
+		<h2>Line breaks</h2>
+		<p>A line break is used to start a new line of text without having to use a second <kbd>&lt;p&gt;</kbd> tag. To add a line break, use the tag <kbd>&lt;br&gt;</kbd>. The tag is also self closing, meaning you only need to write the tag once, without the closing tag.</p>
+
 		<p><br></p>
 
 		<p>Input:</p>
-		<code>&lt;p&gt; Normal &lt;strong&gt;bold&lt;/strong&gt; &lt;em&gt;italics&lt;/em&gt; &lt;u&gt;underlined&lt;/u&gt; &lt;sup&gt;superscript&lt;/sup&gt; &lt;sub&gt;subscript&lt;/sub&gt; &lt;del&gt;deleted&lt;/del&gt; &lt;mark&gt;highlighted&lt;/mark&gt;&lt;/p&gt;</code>
+		<code>&lt;p&gt;Top text.&lt;br&gt;Bottom text.&lt;/p&gt;</code>
 
-		<p>Output:<p>
-		<p> Normal <strong>bold</strong> <em>italics</em> <u>underlined</u> <sup>superscript</sup> <sub>subscript</sub> <del>deleted</del> <mark>highlighted</mark></p>
+		<p>Output:</p>
+		<p>Top text.<br>Bottom text.</p>
 
+		<p><br></p>
+
+		<h2>Horizantal rules</h2>
+		<p>A horizantal rule is just a line going across the page. This can be used to show separation beteen two sections of your website. The tag, like <kbd>&lt;br&gt;</kbd>, is self closing, meaning it doesn't need a closing tag. it is added using the tag <kbd>&lt;hr&gt;</kbd>.</p>
+
+		<p><br></p>
+
+		<p>Input:</p>
+		<pre>
+		&lt;p&gt;Above line.&lt;/p&gt;
+		&lt;hr&gt;
+		&lt;p&gt;Below line.&lt;/p&gt;
+		</pre>
+
+		<p>Output:</p>
+		<p>Above line.</p>
+		<hr>
+		<p>Below line.</p>
