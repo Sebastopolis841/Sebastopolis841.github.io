@@ -8,7 +8,7 @@ The model has 4 layers
 
 ## Internet
 
-## Link (Network Access>
+## Link (Network Access)
 
 Protocols in this layer include:
 
