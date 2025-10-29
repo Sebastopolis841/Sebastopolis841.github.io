@@ -8,13 +8,13 @@ I was trying to draw a black cat with a green eye, but then it turned into a cur
 
 Here is the real art:
 
-![Here is the picture of the cursed "bat"](../Images/PencilBat.png){width=700}
+![Here is the picture of the cursed "bat"](../Images/PencilBat.png)
 
 ## Pixel art
 
 Here is the computer art:
 
-![Here is the pixel art of the cursed "bat"](../Images/PixelBat.png){width=700}
+![Here is the pixel art of the cursed "bat"](../Images/PixelBat.png)
 
 Here is the code for the computer art in hecxadecimal code:
 
