@@ -7,12 +7,14 @@ I was trying to draw a black cat with a green eye, but then it turned into a cur
 ## Real art
 
 Here is the real art:
-	![Here is the picture of the cursed "bat"](/../images/PencilBat.jpeg)
+
+![Here is the picture of the cursed "bat"](/../images/PencilBat.jpeg)
 
 ## Pixel art
 
 Here is the computer art:
-	![Here is the pixel art of the cursed "bat"](/../images/PixelBat.png)
+
+![Here is the pixel art of the cursed "bat"](/../images/PixelBat.png)
 
 Here is the code for the computer art in hecxadecimal code:
 
