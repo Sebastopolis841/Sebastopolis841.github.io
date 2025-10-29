@@ -8,7 +8,7 @@ I was trying to draw a black cat with a green eye, but then it turned into a cur
 
 Here is the real art:
 
-![Here is the picture of the cursed "bat"](../Images/PencilBat.jpeg)
+![Here is the picture of the cursed "bat"](../Images/PencilBat.png)
 
 ## Pixel art
 
