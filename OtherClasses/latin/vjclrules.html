@@ -23,6 +23,14 @@ dl {
 border-left: 10px solid #91232e;
 }
 
+.subheader {
+border-left: 2px solid #2f659c;
+}
+
+.fix {
+border-left: 10px solid #91232e;
+}
+
 .rules {
 font-family: "Times New Roman";
 font-size: 22px;
@@ -133,31 +141,34 @@ height: 400px;
 		<p>There are 4 card types. These are <strong>gladiators</strong>, <strong>lands</strong>, <strong>spells</strong>, and <strong>tokens</strong></p>
 		<br>
 
-		<h3>Gladiators</h3>
-		<br>
-
-		<p><strong>Gladiators</strong> are the creatures that attack and defend against the opposing player. These have health, attack, blood cost, and ability.</p>
+		<div class="subheader">
+			<div class="fix">
+				<h3>Gladiators</h3>
+				<br>
+	
+				<p><strong>Gladiators</strong> are the creatures that attack and defend against the opposing player. These have health, attack, blood cost, and ability.</p>
+			
+				<div class="rules">
+					<dl>
+						<dt><strong>Health:</strong></dt>
+						<dd>This is how much health the creature has. This is the second number on the bottom right of the card, and it is lowered when it blocks or attacks.</dd>
+						<br>
+						
+						<dt><strong>Attack:</strong></dt>
+						<dd>This is how much damage this creature deals to an opposing player or gladiator. When attacking, a gladiator will deal damage equal to the attack stat.</dd>
 		
-		<div class="rules">
-			<dl>
-				<dt><strong>Health:</strong></dt>
-				<dd>This is how much health the creature has. This is the second number on the bottom right of the card, and it is lowered when it blocks or attacks.</dd>
-				<br>
-				
-				<dt><strong>Attack:</strong></dt>
-				<dd>This is how much damage this creature deals to an opposing player or gladiator. When attacking, a gladiator will deal damage equal to the attack stat.</dd>
-
-				<br>
-
-				<dt><strong>Blood cost:</strong></dt>
-				<dd>This is how much it costs to play the card in blood tokens. Blood tokens are aqquired over time and by defeating the opposing player's gladiators.</dd>
-
-				<br>
-
-				<dt><strong>Ability:</strong></dt>
-				<dd>Almost all creatures have a special ability written at the bottom of the card. This ability can make the card weaker or stronger depending on the card. An ability is not a spell, and it's effects are triggered differently based on the ability.</dd>
-			</dl>
-		</div>
-
+						<br>
+		
+						<dt><strong>Blood cost:</strong></dt>
+						<dd>This is how much it costs to play the card in blood tokens. Blood tokens are aqquired over time and by defeating the opposing player's gladiators.</dd>
+		
+						<br>
+		
+						<dt><strong>Ability:</strong></dt>
+						<dd>Almost all creatures have a special ability written at the bottom of the card. This ability can make the card weaker or stronger depending on the card. An ability is not a spell, and it's effects are triggered differently based on the ability.</dd>
+					</dl>
+				</div>
+			</div>
+		</div>	
 	</body>
 </html>
