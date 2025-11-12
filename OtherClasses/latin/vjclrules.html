@@ -7,7 +7,7 @@
 
 		<style>
 
-body{
+body {
 font-family: "Times New Roman";
 font-size: 20px;
 color: #d3de43;
@@ -15,11 +15,11 @@ color: #d3de43;
 background-color: #91232e;
 }
 
-hr{
+hr {
 border: 1px solid #2f659c;
 }
 
-.rules{
+.rules {
 font-family: "Times New Roman";
 font-size: 22px;
 color: #30cf47;
@@ -27,13 +27,22 @@ color: #30cf47;
 border-left: 2px solid black;
 }
 
+.cardborder {
+border-radius: 12px;
+background-color: #000000;
+border: 2px solid #000000;
+padding: 10px;
+width: 90%;
+height: 93%;
+}
+
 .imgborder {
-  border-radius: 25px;
-  background-color: #215736;
-  border: 4px solid #215736;
-  padding: 20px;
-  width: 300px;
-  height: 400px;
+border-radius: 25px;
+background-color: #215736;
+border: 4px solid #215736;
+padding: 20px;
+width: 300px;
+height: 400px;
 }
 
 		</style>
@@ -49,7 +58,9 @@ border-left: 2px solid black;
 
 		<center>
 			<div class=imgborder>
-				<img src="../../Images/placeholderThin.png" width="100%">
+				<div class=cardborder>
+					<img src="../../Images/placeholderThin.png" width="100%">
+				</div>
 			</div>
 		</center>
 
@@ -88,8 +99,7 @@ border-left: 2px solid black;
 		<p>There are 5 phases of a turn. These are <strong>upkeep</strong>, <strong>main</strong>, <strong>gladiator     combat</strong>, <strong>player combat</strong>, and <strong>end</strong>.</p>
 
 		<div class="rules">
-			<ul>
-				<ol>
+			<ol>
 					<li><strong>Upkeep:</strong> In the upkeep phase, the players will ready their gladiators, and their lands will be triggered as well as claiming their blood token(s)</li>
 
 					<li><strong>Main:</strong> In the main phase, the player will play their lands and gladiators to prepare for the gladiator fight ahead.</li>
@@ -99,8 +109,42 @@ border-left: 2px solid black;
 					<li><strong>Player combat:</strong> In the player combat phase, the active player can atteck their opponent. Unlike the gladiator combat phase, the opponent can block these attacks using their gladiators. Whenever a gladiator lands a hit on the opposing player, that gladiator dies</li>
 
 					<li><strong>End:</strong> During the end phase, very little happens. the active player declares the end of their turn and their opponent's turn begins.</li>
-				</ol>
-			</ul>
+			</ol>
+		</div>
+		
+		<br>
+		<br>
+		<h2>Card types</h2>
+		<hr>
+		<br>
+
+		<p>There are 4 card types. These are <strong>gladiators</strong>, <strong>lands</strong>, <strong>spells</strong>, and <strong>tokens</strong></p>
+		<br>
+
+		<h3>Gladiators</h3>
+		<br>
+
+		<p><strong>Gladiators</strong> are the creatures that attack and defend against the opposing player. These have health, attack, blood cost, and ability.</p>
+		
+		<div class="rules">
+			<dl>
+				<dt><strong>Health:</strong></dt>
+				<dd>This is how much health the creature has. This is the second number on the bottom right of the card, and it is lowered when it blocks or attacks.</dd>
+				<br>
+				
+				<dt><strong>Attack:</strong></dt>
+				<dd>This is how much damage this creature deals to an opposing player or gladiator. When attacking, a gladiator will deal damage equal to the attakc stat.</dd>
+
+				<br>
+
+				<dt><strong>Blood cost:</strong></dt>
+				<dd>This is how much it costs to play the card in blood tokens. Blood tokens are aqquired over time and by defeating the opposing player's gladiators.</dd>
+
+				<br>
+
+				<dt><strong>Ability:</strong></dt>
+				<dd>Almost all creatures have a special ability written at the bottom of the card. This ability can make the card weaker or stronger depending on the card. An ability is not a spell, and it's effects are triggered differently based on the ability.</dd>
+			</dl>
 		</div>
 
 	</body>
