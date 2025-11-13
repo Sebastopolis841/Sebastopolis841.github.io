@@ -39,8 +39,12 @@ This message is represented as a string of letters, numbers, and symbols. But we
 
 Select the first six characters from this message and copy them here:
 
-Using the ASCII table, convert these five characters to binary (if necessary,
+oqfTFD
+
+Using the ASCII table, convert these six characters to binary (if necessary,
 include leading zeroes so that each character is 8 bits): 
+
+01101111 01110001 01100110 01010100 01000110 01000100
 
 ### Transport Layer: Break your message into packets
 
