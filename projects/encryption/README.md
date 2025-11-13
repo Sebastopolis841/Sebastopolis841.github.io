@@ -20,16 +20,10 @@ and the messages that you received.
 
 | Encoded Message | Decoded Message | Key |
 | --------------- | --------------- | --- |
-|Spwwz espcp oz jzf wtvp nwlds czjlw nlfdp T oz lyo T slgp l qlgzctep nlco xj qlgzctep nlco td RZWPX                 |                 |  11 |
-|                 |                 |  14 |
-|                 |                 |  23 |
-|                 |                 |  24 |
-|                 |                 |  1  |
-|                 |                 |  10 |
-|                 |                 |  11 |
-|                 |                 |  14 |
-|                 |                 |  23 |
-|                 |                 |  24 |
+|Spwwz espcp oz jzf wtvp nwlds czjlw nlfdp T oz lyo T slgp l qlgzctep nlco xj qlgzctep nlco td RZWPX|Hello there do you like clash royal cause I do and I have a favorite card my favorite card is GOLEM|11|
+|Bc, W rcb'h dzom qzogv fcmozs. W rc sbxcm chvsf uoasg, sgdsqwozzm cjsfqcadzwqohsr pcofr uoasg.|No, I don't play clash royale. I do enjoy other games, especially overcomplicated board games.|14|
+|Ты некультурная свинья и заслуживаешь тюрьмы. Zixpe Olvxib потрясающий||Ты некультурная свинья и заслуживаешь тюрьмы. Clash Royale потрясающий|23|
+|G sldmprslyrcjw yk lmr ksjrgjglesyj, ylb gd G ucpc, G umsjbl'r'tc qrsbgcb psqqgyl. Yjqm, ufw qugraf rm clejgqf hsqr rm qyw "Ajyqf Pmwyjc". Rfyr kybc lm qclqc.|I unfortunately am not multilingual, and if I were, I wouldn't've studied russian. Also, why switch to english just to say "Clash Royale". That made no sense.|24|
 
 ## Part 3: Connection to TCP/IP Model
 
