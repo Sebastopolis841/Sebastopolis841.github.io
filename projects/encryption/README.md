@@ -53,33 +53,38 @@ Assume that each packet can hold two bytes. Fill in the packet information below
     =========
     Packet 1:
 
-    Source: [Your Name]
-    Destination: [Partner's Name]  
+    Source: Sebastian's PC
+    Destination: Kyle's PC  
     Sequence: 1/3
-    Data: [binary for char 1] [binary for char 2]
+    Data: 01101111 01110001
     =========
     Packet 2:
 
-    Source: [Your Name]
-    Destination: [Partner's Name]
+    Source: Sebastian's PC
+    Destination: Kyle's PC
     Sequence: 2/3 
-    Data: [binary for char 3] [binary for char 4]
+    Data: 01100110 01010100
     =========
     Packet 3:
 
-    Source: [Your Name]
-    Destination: [Partner's Name]
+    Source: Sebastian's PC
+    Destination: Kyle's PC
     Sequence: 3/3
-    Data: [binary for char 5] [binary for char 6]
+    Data: 01000110 01000100
     =========
 
 ## Part 4: Reflection Questions
 
 - What is the difference between symmetric and asymmetric encryption? What purpose did each serve in this simulation?
+	- The difference between symetric and asymmetric encryption is the lack of a shared key. In this simulation, the asymetric encryption was the first message sent, and the symmetric encryption was the messages where we both had the same ceaser cipher for each message.
 - Why is it important that this protocol uses a new key for each message?
+	- It is important because if there was the same key in every message, then a hacker could just find the key once and know every message that was sent.
 - Why is it important that you never share your secret key?
+	- This is important becasue the private key is what you use to decode all encrypted messages going to you. If somebody finds out what it is, then they can decrypt any message going to you.
 - In the transport layer, do these messages use TCP or UDP? Why?
+	- These messages use TCP because it ensures that the message gets there complete and error free.
 - Now that you've created packets in the transport layer, give a short explanation of what happens to these packets in the internet layer and in the link layer.
-- This protocol successfully encrypts the **content** of the message. Even though and adversary in the middle can't read the content of the message, what other
-information can they still see?
-
+	- **Internet Layer:** In the internet layer, the message is sent along between the different routing tables to get to the desired IP adress as quickly as possible.
+	- **Link Layer:** In the link layer, the message is divided between the header and payload. The header holds the information about the source, destination and sequence about the packet, while the payload contains the actual data. The link layer also adds parity bits for error detection and correction.
+- This protocol successfully encrypts the **content** of the message. Even though and adversary in the middle can't read the content of the message, what other information can they still see?
+	- The source, destination, sequence, and anything else in the header.
