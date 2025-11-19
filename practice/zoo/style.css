@@ -1,0 +1,15 @@
+table, tr, th, td{
+    border: 3px dashed skyblue;
+    border-collapse: collapse;
+    color: green;
+}
+
+body {
+    background-color: lemonchiffon;
+    color:darkblue
+}
+
+a {
+    text-decoration: none;
+    color: darkblue;
+}
