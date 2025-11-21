@@ -2,11 +2,13 @@ table, tr, th, td{
     border: 3px dashed skyblue;
     border-collapse: collapse;
     color: green;
+    line-height: 2;
 }
 
 body {
     background-color: lemonchiffon;
-    color:darkblue
+    color:darkblue;
+    cursor: url(elephant.png), auto;
 }
 
 a {
@@ -26,4 +28,15 @@ h2 {
 .cprt {
     color: black;
     font-size: small;
+}
+ul {
+    list-style-type: none;
+    line-height: 80%;
+}
+
+button:hover{
+    border-radius: 5px;
+    background-color: green;
+    color: yellowgreen;
+    cursor: url(giraffe.png), auto;
 }
