@@ -13,3 +13,17 @@ a {
     text-decoration: none;
     color: darkblue;
 }
+
+h1 {
+    color: blue;
+}
+
+h2 {
+
+    color: red;
+}
+
+.cprt {
+    color: black;
+    font-size: small;
+}
