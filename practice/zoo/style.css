@@ -1,4 +1,4 @@
-table, tr, th, td{
+table, tr, th, td {
     border: 3px dashed skyblue;
     border-collapse: collapse;
     color: green;
@@ -9,6 +9,8 @@ body {
     background-color: lemonchiffon;
     color:darkblue;
     cursor: url(elephant.png), auto;
+
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 a {
@@ -42,6 +44,20 @@ button:hover {
 }
 
 td:hover, th:hover, caption:hover {
+    font-weight: bold;
+    color: rgb(171, 11, 11);
+
+    cursor: url(giraffe.png), auto;
+}
+
+td > ul {
+    font-weight: normal;
+    color: green;
+    
+    cursor: url(elephant.png), auto;
+}
+
+li:hover {
     font-weight: bold;
     color: rgb(171, 11, 11);
 
