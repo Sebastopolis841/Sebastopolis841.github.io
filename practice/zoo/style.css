@@ -3,6 +3,8 @@ table, tr, th, td {
     border-collapse: collapse;
     color: green;
     line-height: 2;
+    padding-right: 10px;
+    padding-left: 3px;
 }
 
 body {
@@ -11,11 +13,15 @@ body {
     cursor: url(elephant.png), auto;
 
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
+
+    padding-left: 10%;
 }
 
 a {
     text-decoration: none;
     color: darkblue;
+
+    margin: 5px;
 }
 
 h1 {
@@ -30,7 +36,13 @@ h2 {
 .cprt {
     color: black;
     font-size: small;
+    margin-left: 6%;
 }
+
+table {
+    margin-left: 5%;
+}
+
 ul {
     list-style-type: none;
     line-height: 80%;
@@ -48,6 +60,7 @@ td:hover, th:hover, caption:hover {
     color: rgb(171, 11, 11);
 
     cursor: url(giraffe.png), auto;
+    padding-right: 3px;
 }
 
 td > ul {
@@ -55,6 +68,8 @@ td > ul {
     color: green;
     
     cursor: url(elephant.png), auto;
+    padding-right: 10px;
+    padding-left: 7px;
 }
 
 li:hover {
@@ -62,4 +77,5 @@ li:hover {
     color: rgb(171, 11, 11);
 
     cursor: url(giraffe.png), auto;
+    padding-right: 3px;
 }
