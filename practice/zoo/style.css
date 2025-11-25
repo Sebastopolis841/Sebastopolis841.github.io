@@ -34,9 +34,16 @@ ul {
     line-height: 80%;
 }
 
-button:hover{
+button:hover {
     border-radius: 5px;
     background-color: green;
     color: yellowgreen;
+    cursor: url(giraffe.png), auto;
+}
+
+td:hover, th:hover, caption:hover {
+    font-weight: bold;
+    color: rgb(171, 11, 11);
+
     cursor: url(giraffe.png), auto;
 }
