@@ -4,6 +4,8 @@ font-size: 21px;
 color: #d3de43;
 
 background-color: #91232e;
+
+cursor: url(latinImages/sword.png), auto;
 }
 
 hr {
