@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Who wants ice cream??</title>
+        <script src="../js/validate.js"></script>
+    </head>
+    <body>
+        <form action="https://httpbin.org/post" method="POST">
+            <label for="name">What is your name?</label>
+            <input type="text" name="name" placeholder="John Smith" required>
+            <br>
+            <label for="name">What is your email?</label>
+            <input type="email" name="email" placeholder="ExampleEmail@example.com" required>
+            <br>
+            <label for="phone">What is your phone number?</label>
+            <input type="text" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <br>
+            <label for="people">How many people will you bring with you to the party?</label>
+            <input type="number" name="people" value="0" required>
+            <br>
+            <p>What is your favorite flavor of ice cream?</p>
+            <input type="radio" name="vanilla">
+            <label for="Vanilla">Vanilla</label>
+            <br>
+            <input type="radio" name="chocolate chip">
+            <label for="Chocolate Chip">Chocolate Chip</label>
+            <br>
+            <input type="radio" name="strawberry">
+            <label for="Strawberry">Strawberry</label>
+            <br>
+            <input type="radio" name="other flavor">
+            <laber for="other flavor">Other: </laber>
+            <input type="text" name="new flavor">
+            <br>
+            <p>Which toppings do you like?</p>
+            <input type="checkbox" name="sprinkles">
+            <label for="sprinkles">Sprinkles</label>
+            <br>
+            <input type="checkbox" name="magic shell">
+            <label for="magic shell">Magic Shell</label>
+            <br>
+            <input type="checkbox" name="chocolate chips">
+            <label for="chocolate chips">Chocolate Chips</label>
+            <br>
+            <input type="checkbox" name="gummy bears">
+            <label for="gummy bears">Gummy Bears</label>
+            <br>
+            <input type="checkbox" name="other topping">
+            <label for="other topping">Other: </label>
+            <input type="text" name="new topping">
+
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </body>
+</html>
