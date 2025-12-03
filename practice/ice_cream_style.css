@@ -1,0 +1,25 @@
+input, select {
+    border: 2px solid green;
+    border-bottom: 2px solid red;
+    border-right: 2px solid red;
+    border-radius: 15%;
+}
+
+.pad {
+    padding-left: 15px;
+}
+
+hr {
+    border: 0.5px solid red;
+    border-radius: 15%;
+    margin-top: 15px;
+}
+
+label:hover {
+    color: green;
+    font-weight: bold;
+}
+
+.point {
+    cursor:pointer;
+}
