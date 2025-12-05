@@ -22,3 +22,8 @@ a {
 dd {
     padding-bottom: 30px;
 }
+
+dt {
+    font-size: large;
+    font-weight: bold;
+}
