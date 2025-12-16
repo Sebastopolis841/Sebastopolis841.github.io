@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tree 🎄</title>
+        <style>
+            body {
+                height: 110vh;
+                background-image: linear-gradient(
+                    to bottom,
+                    green,
+                    white,
+                    red
+                );
+            }
+
+            #container {
+                width: 600px;
+                height: 800px;
+                margin: auto;
+            }
+
+            #tree {
+                width: 0px;
+                height: 0px;
+                border-bottom: 700px solid green;
+                border-left: 300px solid transparent;
+                border-right: 300px solid transparent;
+            }
+
+            #es {
+                width: 600px;
+                height: 100px;
+                position: absolute;
+                top: 786px;
+                left: 65px;
+            }
+
+            #stump {
+                background-color: brown;
+                width: 100px;
+                height: 100px;
+                margin: auto;
+            }
+
+            .red {
+                background-image: radial-gradient(
+                    white,
+                    red
+                );
+                height: 35px;
+                width: 35px;
+                border-radius: 50px;
+                position: absolute;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Behold! A Tree 🎄</h1>
+
+        <div id="container">
+            <div id="tree">
+                <div id="es">
+                    <div id="stump"></div>
+                </div>
+                <div class="red" style="top: 200px;"></div>
+            </div>
+        </div>
+    </body>
+</html>
