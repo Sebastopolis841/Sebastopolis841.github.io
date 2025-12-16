@@ -27,7 +27,7 @@
                 border-right: 300px solid transparent;
             }
 
-            #es {
+            #empty {
                 width: 600px;
                 height: 100px;
                 position: absolute;
@@ -53,17 +53,104 @@
                 position: absolute;
             }
 
+            .yellow {
+                background-image: radial-gradient(
+                    yellow,
+                    white
+                );
+                height: 30px;
+                width: 30px;
+                border-radius: 50px;
+                position: absolute;
+            }
+
+            #star {
+                width: 75px;  
+                aspect-ratio: 1;
+                background-image: radial-gradient(
+                    gold,
+                    rgb(255, 223, 42),
+                    yellow,
+                    rgb(250, 247, 220),
+                    lemonchiffon,
+                    white
+                );
+                clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%);   
+                position: absolute;
+                top: 50px;
+                left: 328px;
+            }
+
+            .silver {
+                width: 40px;
+                height: 40px;
+                border-radius: 50px;
+                position: absolute;
+                background-image: radial-gradient(
+                    white,
+                    #A9A9A9,
+                    white,
+                    #A9A9A9,
+                    white,
+                    #A9A9A9,
+                    white,
+                    #A9A9A9,
+                    white,
+                    #A9A9A9
+                );
+            }
+
+            .lines {
+                width: 13px;
+                height: 46px;
+                border-radius: 50%;
+                background-image: linear-gradient(
+                    to right,
+                    red,
+                    white,
+                    red,
+                    white,
+                    red,
+                    white,
+                    red,
+                    white,
+                    red,
+                    white,
+                    red,
+                    white,
+                    red,
+                    white,
+                    red,
+                    white
+                );
+                position: absolute;
+            }
+
+            
+
         </style>
     </head>
     <body>
-        <h1>Behold! A Tree 🎄</h1>
+        <h1>Behold! A Tree! 🎄</h1>
 
         <div id="container">
             <div id="tree">
-                <div id="es">
+                <div id="empty">
                     <div id="stump"></div>
                 </div>
                 <div class="red" style="top: 200px;"></div>
+                <div class="red" style="top: 400px; left: 250px;"></div>
+                <div class="red" style="top: 600px; left: 470px;"></div>
+                <div class="yellow" style="top: 280px; left: 300px;"></div>
+                <div class="yellow" style="top: 540px; left: 230px"></div>
+                <div class="yellow" style="top: 440px; left: 420px"></div>
+                <div id="star"></div>
+                <div class="silver" style="top: 360px;"></div>
+                <div class="silver" style="top: 670px; left: 260px"></div>
+                <div class="silver" style="top: 520px; left: 470px;"></div>
+                <div class="lines" style="top: 580px;"></div>
+                <div class="lines" style="top: 330px; left: 300px;"></div>
+                <div class="lines" style="top: 680px; left: 560px;"></div>
             </div>
         </div>
     </body>
