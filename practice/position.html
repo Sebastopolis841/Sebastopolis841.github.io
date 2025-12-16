@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../js/validate.js"></script>
+        <title>Position this!</title>
+        <style>
+            body {
+                /* background-color: lemonchiffon; */
+                background-image: linear-gradient(
+                    to right,
+                    red,
+                    orange,
+                    yellow,
+                    green,
+                    blue,
+                    rgb(0, 0, 76),
+                    rgb(116, 2, 116)
+                );  
+            }
+
+            #sean {
+                width: 200px;
+                height: 200px;
+                background-color: orange;
+                position: fixed;
+                left: 100px;
+                top: 100px;
+            }
+
+            #food {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                border-radius: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Here are some boxes</h1>
+        
+        <div id="sean">
+            <div id="food"></div>
+        </div>
+    </body>
+</html>
