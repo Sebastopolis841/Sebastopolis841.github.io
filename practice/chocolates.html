@@ -45,6 +45,12 @@
                 grid-column-start: 3;
                 grid-row-start:2;
             }
+
+            #upsd_heart {
+                grid-area: 3/3;
+                background-color: rgb(113, 71, 41);
+            }
+
             .lilbits{
                 grid-column-start: 1;
                 grid-row-start: 1;
@@ -126,6 +132,64 @@
                 mask: 100% 50% var(--g),99.606% 56.267% var(--g),98.429% 62.434% var(--g),96.489% 68.406% var(--g),93.815% 74.088% var(--g),90.451% 79.389% var(--g),86.448% 84.227% var(--g),81.871% 88.526% var(--g),76.791% 92.216% var(--g),71.289% 95.241% var(--g),65.451% 97.553% var(--g),59.369% 99.114% var(--g),53.14% 99.901% var(--g),46.86% 99.901% var(--g),40.631% 99.114% var(--g),34.549% 97.553% var(--g),28.711% 95.241% var(--g),23.209% 92.216% var(--g),18.129% 88.526% var(--g),13.552% 84.227% var(--g),9.549% 79.389% var(--g),6.185% 74.088% var(--g),3.511% 68.406% var(--g),1.571% 62.434% var(--g),0.394% 56.267% var(--g),0% 50% var(--g),0.394% 43.733% var(--g),1.571% 37.566% var(--g),3.511% 31.594% var(--g),6.185% 25.912% var(--g),9.549% 20.611% var(--g),13.552% 15.773% var(--g),18.129% 11.474% var(--g),23.209% 7.784% var(--g),28.711% 4.759% var(--g),34.549% 2.447% var(--g),40.631% 0.886% var(--g),46.86% 0.099% var(--g),53.14% 0.099% var(--g),59.369% 0.886% var(--g),65.451% 2.447% var(--g),71.289% 4.759% var(--g),76.791% 7.784% var(--g),81.871% 11.474% var(--g),86.448% 15.773% var(--g),90.451% 20.611% var(--g),93.815% 25.912% var(--g),96.489% 31.594% var(--g),98.429% 37.566% var(--g),99.606% 43.733% var(--g),radial-gradient(100% 100%,#000 46.953%,#0000 calc(46.953% + 1px));
                 margin: auto;
             }
+
+            #choco_rect {
+                background-color: rgb(127, 83, 61);
+                grid-area: 2/1;
+                width: 25vh;
+                height: 13vh;
+                margin: auto;
+                border-radius: 30%;
+            }
+
+            #choco_circ {
+                background-color: rgb(130, 71, 42);
+                grid-area: 2/2;
+                width: 15vh;
+                height: 15vh;
+                margin: auto;
+                border-radius: 50px;
+            }
+
+            #choco_spec {
+                background-image: radial-gradient(
+                    chocolate,
+                    white,
+                    chocolate,
+                    white,
+                    chocolate,
+                    white,
+                    chocolate,
+                    white,
+                    chocolate,
+                    white,
+                    chocolate
+                );
+                grid-area: 3/1;
+                width: 15vh;
+                height: 15vh;
+                margin: auto;
+                border-radius: 50%;
+            }
+
+            #choco_lines {
+                background-image: linear-gradient(
+                    white,
+                    white,
+                    chocolate,
+                    white,
+                    white,
+                    chocolate,
+                    white,
+                    white,
+                    chocolate
+                );
+                grid-area: 3/2;
+                width: 15vh;
+                height: 15vh;
+                margin: auto;
+                border-radius: 50%;
+            }
         </style>
     </head>
     <body>
@@ -145,7 +209,7 @@
                 <div class="mnm" id="yellow">
                     m
                 </div>
-                <a onclick="alert('you found the skittle')">
+                <a onclick="alert('You found the skittle!')">
                     <div class="mnm" id="skittle">
                         s
                     </div>
@@ -159,13 +223,14 @@
                 <div class="reeses"></div>
                 <div class="reeses"></div>
                 
-                <!-- TODO: Add some more divs here, and style them
-                    to fill in the 'lilbits' part of the chocolate box -->
             </div>
             <div id="choco"></div>
             <div id="reeses_lrg"></div>
-            <!-- TODO: Add some more divs here, and style them
-                to fill in the other sections of the chocolate box -->
+            <div id="choco_rect"></div>
+            <div id="choco_circ"></div>
+            <div class="heart" id="upsd_heart"></div>
+            <div id="choco_spec"></div>
+            <div id="choco_lines"></div>
         </div>
     </body>
 </html> 
