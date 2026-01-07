@@ -1,0 +1,39 @@
+body {
+    background-color: darkblue;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #33FF33;
+  position: sticky;
+  height: 50px;
+}
+
+.navbar a {
+  float: left;
+  font-size: 23px;
+  color: darkblue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  padding-left: 100px;
+}
+
+#hero {
+    margin-left: 17%;
+    width: 70vw;
+}
+
+#CTA {
+    position: absolute;
+    top: 700px;
+    left: 42%;
+    width: 300px;
+    height: 100px;
+    font-family: 'trebuchet MS', sans-serif;
+    font-style: italic;
+    font-size: 45px;
+    border: 5px solid #A7A7A7;
+    border-radius: 5%;
+    background-color: rgb(104, 166, 104);
+}
