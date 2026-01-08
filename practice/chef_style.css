@@ -1,5 +1,6 @@
 body {
     background-color: darkblue;
+    font-family: 'trebuchet MS', sans-serif;
 }
 
 .navbar {
@@ -30,10 +31,61 @@ body {
     left: 42%;
     width: 300px;
     height: 100px;
-    font-family: 'trebuchet MS', sans-serif;
     font-style: italic;
     font-size: 45px;
-    border: 5px solid #A7A7A7;
+    border: 5px solid #969292;
     border-radius: 5%;
-    background-color: rgb(104, 166, 104);
+    background-color: rgb(73, 206, 73);
+    cursor: pointer;
+}
+
+#deals {
+  margin: 50px;
+  color: darkblue;
+  padding-left: 150px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: beige;
+  font-size: 56px;
+  border: 4px solid black;
+}
+
+.card {
+  background-color: lemonchiffon;
+  border: 2px solid #33FF33;
+  border-radius: 40px;
+  height: 350px;
+  width: 250px;
+  text-align: center;
+  margin: auto;
+  font-size: 18px;
+}
+
+.crdgrd {
+  display: grid;
+  grid:
+    'crd1 crd2 crd3' 350px
+    /1fr 1fr 1fr;
+}
+
+#crd1 {
+  grid-area: crd1;
+}
+
+#crd2 {
+  grid-area: crd2;
+}
+
+#crd3 {
+  grid-area: crd3;
+}
+
+.card h2 {
+  font-size: 60px;
+}
+
+.line {
+  height: 0px;
+  width: 96.5%;
+  border: 4px solid black;
 }
