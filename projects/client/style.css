@@ -1,0 +1,33 @@
+body {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #33e4ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100vw;
+    border-radius: 0px 0px 50px 50px;
+  }
+  
+  .navbar a {
+    float: left;
+    color: #0000EE;
+    font-size: 23px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    padding-left: 100px;
+  }
+
+  #onpage {
+    font-weight: bold;
+    font-style: italic;
+    color: #551A8B;
+  }
