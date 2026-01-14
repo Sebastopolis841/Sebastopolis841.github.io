@@ -1,11 +1,11 @@
-body {
+  body {
     margin-top: 60px;
     font-size: 20px;
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
-.navbar {
-    overflow: hidden;
+  .navbar {
+    overflow: scroll;
     background-color: #33e4ff;
     position: fixed;
     top: 0;
@@ -20,9 +20,26 @@ body {
     color: #0000EE;
     font-size: 23px;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
-    padding-left: 100px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .navbar a:hover {
+    text-decoration: underline;
+    border-left: 2px solid #0000EE;
+    border-right: 2px solid #0000EE;
+  }
+
+  #onpage:hover {
+    
+    border-left: 2px solid #551A8B;
+    border-right: 2px solid #551A8B;
+  }
+
+  .navbar ul {
+    list-style: none;
+    padding-left: 450px;
   }
 
   #onpage {
@@ -45,3 +62,60 @@ body {
     margin-left: 150px;
     margin-right: 150px;
   }
+
+  #CTA {
+    position: absolute;
+    top: 700px;
+    left: 17%;
+    width: 300px;
+    height: 100px;
+    font-style: italic;
+    font-size: 230%;
+    border: 5px solid #000000;
+    border-radius: 15%;
+    background-color: #33e4ff;
+    cursor: pointer;
+}
+
+#desc {
+  position: absolute;
+  top: 550px;
+  left: 12%;
+  color: #33e4ff;
+  text-align: center;
+  border: 1px solid transparent;
+  width: 500px;
+}
+
+#desc_head {
+  position: absolute;
+  top: 500px;
+  left: 17%;
+  color: #33e4ff;
+  text-align: center;
+}
+
+#indexgrid {
+  display: grid;
+  grid:
+    'sct1 sct2' 100%
+    /1fr 1fr;
+}
+
+#sct1 {
+  grid-area: sct1;
+  margin: auto;
+}
+
+#sct2 {
+  grid-area: sct2;
+  margin: auto;
+}
+
+#indexgrid img {
+  height: 500px;
+}
+
+p {
+  text-align: center;
+}

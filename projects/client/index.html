@@ -11,13 +11,37 @@
     </head>
     <body>
         <div class="navbar">
-            <a href="index.html" id="onpage">Main</a>
-            <a href="test.html">Testimonials</a>
-            <a href="serve.html">Services</a>
+            <ul>
+                <a href="index.html" id="onpage">Main</a>
+                <a href="test.html">Testimonials</a>
+                <a href="serv.html">Services</a>
+            </ul>
         </div>
 
         <h1 id="title">Title</h1>
 
-        <img id="hero" src="../../Images/placeholder.png">
+        <!--Hero and Call To Action(CTA)-->
+        <img id="hero" src="../../Images/placeholder.png" alt="Just a placeholder for now."> <!--Flowers from wikimedia commons?-->
+        <button id="CTA" onclick="location.href='serv.html'" type="button">Book now!</button> <!--Link to serv.html-->
+
+        <!--Breif description of why to choose you-->
+        <h2 id="desc_head">Why choose me?</h2>
+        <p id="desc">A little bit of text explaining why to choose you.</p>
+
+        <div id="main"> <!--Begins the padding-->
+            <div id="indexgrid"> <!--Setup to make coding easier-->
+                <div id="sct1"> <!--Adds to the left side-->
+                    <img src="../../Images/placeholderThin.png" alt="Just a placeholder for now">
+                    <p>Some text about you.</p>
+                </div>
+                <div id="sct2"> <!--Adds to the right side-->
+                    <p>Your mission statement.</p>
+                    <img src="media/flowers.jpg" alt="Picture of flowers (Just placeholder for now)">
+                </div>
+            </div>
+
+            <p>4.5 Stars on Weddingwire</p>
+            <p>Contact me at <a href="mailto:elikvertrees@gmail.com">elikvertrees@gmail.com</a></p>
+        </div>
     </body>
 </html>
