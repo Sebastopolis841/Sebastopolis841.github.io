@@ -1,8 +1,7 @@
 body {
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 50px;
+    margin-top: 60px;
     font-size: 20px;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 .navbar {
@@ -30,4 +29,19 @@ body {
     font-weight: bold;
     font-style: italic;
     color: #551A8B;
+  }
+
+  #title {
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #hero {
+    width: 100vw;
+  }
+
+  #main {
+    margin-left: 150px;
+    margin-right: 150px;
   }
