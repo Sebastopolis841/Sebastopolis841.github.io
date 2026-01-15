@@ -153,3 +153,30 @@ p {
 #test3 {
   grid-area: test3;
 }
+
+form {
+  display: none;
+  position: fixed;
+  border: 3px solid #000000;
+  z-index: 9;
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+  backdrop-filter: blur(1px);
+  margin: auto;
+}
+
+#blur {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  backdrop-filter: blur(3px);
+}
+
+#close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+}
