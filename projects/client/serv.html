@@ -5,6 +5,16 @@
 
         <link rel="stylesheet" href="style.css">
 
+        <script>
+            function openForm() {
+                document.getElementById("booking").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("booking").style.display = "none";
+            }
+        </script>
+
         <!--Add a favicon-->
 
         <script src="../../js/validate.js"></script> <!--Delete this later-->
@@ -16,6 +26,32 @@
                 <li><a href="test.html">Testimonials</a></li>
                 <li><a href="serv.html" id="onpage">Services</a></li>
             </ul>
+        </div>
+
+        <div id="main">
+            
+            <form action="mailto:ss74700@email.vccs.edu" method="POST">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" required><br>
+
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="level">Level: </label>
+                <select id="level" name="level" required>
+                    <option value="silver">Silver</option>
+                    <option value="gold">Gold</option>
+                    <option value="platinum">Platinum</option>
+                </select>
+                <br>
+                <br>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
         </div>
     </body>
 </html>
