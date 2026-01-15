@@ -13,6 +13,7 @@
     height: 50px;
     width: 100vw;
     border-radius: 0px 0px 50px 50px;
+    z-index: 10;
   }
   
   .navbar a {
