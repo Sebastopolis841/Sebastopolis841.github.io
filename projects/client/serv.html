@@ -32,7 +32,12 @@
         </div>
 
         <div id="main">
-            <button onclick="openForm()">Book now</button>
+            <h1 id="title">Our Services</h1>
+
+            <img id="banner" src="../../Images/placeholder.png" alt="Placeholder for now.">
+
+            <br>
+            <button id="bookNow" onclick="openForm()">Book now</button>
 
             <form action="mailto:ss74700@email.vccs.edu" method="POST" id="booking">
                 <button id="close" onclick="closeForm()">X</button>
@@ -47,7 +52,8 @@
                 <input type="email" id="email" name="email" required><br>
 
                 <label for="level">Level: </label>
-                <select id="level" name="level">
+                <select id="level" name="level" required>
+                    <option value="">--Choose Answer--</option>
                     <option value="silver">Silver</option>
                     <option value="gold">Gold</option>
                     <option value="platinum">Platinum</option>

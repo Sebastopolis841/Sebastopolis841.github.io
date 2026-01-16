@@ -130,6 +130,15 @@ p {
     /1fr 1fr;
 }
 
+#testgrid img {
+  height: 300px;
+  margin: auto;
+}
+
+#testgrid p {
+  margin: auto;
+}
+
 #pic1 {
   grid-area: pic1;
 }
@@ -157,13 +166,14 @@ p {
 form {
   display: none;
   position: fixed;
+  top: 35vh;
+  left: 40vw;
   border: 3px solid #000000;
   z-index: 9;
   max-width: 300px;
   padding: 10px;
   background-color: white;
   backdrop-filter: blur(1px);
-  margin: auto;
 }
 
 #blur {
@@ -179,4 +189,22 @@ form {
   top: 0;
   right: 0;
   font-weight: bold;
+  border-radius: 0;
+}
+
+#banner {
+  height: 200px;
+  width: 100%;
+}
+
+#bookNow {
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  font-style: italic;
+  font-size: 230%;
+  border: 5px solid #000000;
+  border-radius: 15%;
+  background-color: #33e4ff;
+  cursor: pointer;
 }
