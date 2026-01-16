@@ -2,10 +2,10 @@
     margin-top: 60px;
     font-size: 20px;
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
-} 
+}
 
   .navbar {
-    overflow: scroll;
+    overflow: hidden;
     background-color: #33e4ff;
     position: fixed;
     top: 0;
