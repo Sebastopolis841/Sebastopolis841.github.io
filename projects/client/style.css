@@ -242,3 +242,22 @@ form {
   background-color: #dedede;
   border-radius: 40px;
 }
+
+footer {
+  background-color: #0000EE;
+  width: 100vw;
+  height: 200px;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+
+#top {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 0;
+  background-color: transparent;
+}
