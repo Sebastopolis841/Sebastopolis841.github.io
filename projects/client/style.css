@@ -198,7 +198,6 @@ form {
 }
 
 #bookNow {
-  position: absolute;
   width: 300px;
   height: 100px;
   font-style: italic;
@@ -207,4 +206,39 @@ form {
   border-radius: 15%;
   background-color: #33e4ff;
   cursor: pointer;
+
+}
+
+#levelgrid {
+  display: grid;
+  grid:
+    'slvr gold pltnm' 800px
+    /1fr 1fr 1fr;
+  gap: 5px;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+#slvr {
+  grid-area: slvr;
+  background-color: silver;
+  border-radius: 40px;
+}
+
+#gold {
+  grid-area: gold;
+  background-color: gold;
+  border-radius: 40px;
+}
+
+#pltnm {
+  grid-area: pltnm;
+  background-color: #dedede;
+  border-radius: 40px;
 }

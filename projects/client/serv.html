@@ -37,8 +37,7 @@
             <img id="banner" src="../../Images/placeholder.png" alt="Placeholder for now."> <!--Adds the banner-->
 
             <br>
-            <button id="bookNow" onclick="openForm()">Book now</button> <!--Makes a button to open the form-->
-
+            
             <form action="mailto:ss74700@email.vccs.edu" method="POST" id="booking"> <!--Code for the form-->
                 <button id="close" onclick="closeForm()">X</button>
 
@@ -68,6 +67,24 @@
                 <button type="submit" onclick="closeForm()">Submit</button>
                 <button type="reset">Reset</button>
             </form>
+
+            <div id="levelgrid"> <!--Makes a grid to make coding easier-->
+                <div id="slvr"> <!--Shows silver class-->
+                    <h2>Silver</h2>
+                </div>
+
+                <div id="gold"> <!--Shows gold class-->
+                    <h2>Gold</h2>
+                </div>
+
+                <div id="pltnm"> <!--Shows platinum class-->
+                    <h2>Platinum</h2>
+                </div>
+            </div>
+
+            <div class="center">
+                <button id="bookNow" onclick="openForm()">Book now</button> <!--Makes a button to open the form-->
+            </div>
         </div>
     </body>
 </html>
