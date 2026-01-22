@@ -22,8 +22,7 @@
     font-size: 23px;
     text-align: center;
     text-decoration: none;
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 100px;
   }
 
   .navbar a:hover {
@@ -40,7 +39,7 @@
 
   .navbar ul {
     list-style: none;
-    padding-left: 450px;
+    margin-left: 32%;
   }
 
   #onpage {
@@ -57,11 +56,12 @@
 
   #hero {
     width: 100vw;
+    height: 700px;
   }
 
   #main {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 15.5%;
+    margin-right: 15.5%;
   }
 
   #CTA {
@@ -195,6 +195,7 @@ form {
 #banner {
   height: 200px;
   width: 100%;
+  border-radius: 35px;
 }
 
 #bookNow {
