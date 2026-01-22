@@ -22,7 +22,8 @@
     font-size: 23px;
     text-align: center;
     text-decoration: none;
-    padding-right: 100px;
+    padding-right: 5%;
+    padding-left: 5%
   }
 
   .navbar a:hover {
@@ -39,7 +40,7 @@
 
   .navbar ul {
     list-style: none;
-    margin-left: 32%;
+    margin-left: 27%;
   }
 
   #onpage {
