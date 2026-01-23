@@ -266,3 +266,22 @@ footer a {
   width: 0;
   background-color: transparent;
 }
+
+#ftrgrid {
+  display: grid;
+  grid:
+    'sct1 sct2' 100%
+    /1fr 1fr;
+}
+
+#area1 {
+  grid-area: sct1;
+}
+
+#area2 {
+  grid-area: sct2;
+}
+
+#levelgrid ul {
+  text-align: left;
+}
