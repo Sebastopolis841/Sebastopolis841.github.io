@@ -231,18 +231,21 @@ form {
   grid-area: slvr;
   background-color: silver;
   border-radius: 40px;
+  border: 4px solid black;
 }
 
 #gold {
   grid-area: gold;
   background-color: gold;
   border-radius: 40px;
+  border: 4px solid black;
 }
 
 #pltnm {
   grid-area: pltnm;
   background-color: #dedede;
   border-radius: 40px;
+  border: 4px solid black;
 }
 
 footer {
