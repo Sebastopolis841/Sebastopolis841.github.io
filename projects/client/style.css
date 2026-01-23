@@ -289,3 +289,7 @@ footer a {
 blockquote {
   text-align: left;
 }
+
+cite {
+  padding-left: 5%;
+}
