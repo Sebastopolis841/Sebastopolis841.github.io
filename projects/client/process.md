@@ -40,4 +40,4 @@ From January 14th to January 23rd, I was very productive
 I stopped coding this for 4 days, then came back to add more.
 
 - The first commit added collumns for the service levels on serv.html
-- The second commit added the footers
+- The second commit added the footers for all pages.
