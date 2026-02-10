@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas stuff!!!</title>
+        <style>
+            canvas {
+                border: black 1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>This is a canvas</h1>
+        <canvas id="canvas" width="800" height="800">
+        </canvas>
+        <script>
+            
+        //MAGIC
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+         //draw the background
+        ctx.fillStyle = "#1ccaff";
+        ctx.fillRect(0,0,800,800);
+
+        //draw a green rectangle
+        ctx.fillStyle = "green";
+        ctx.fillRect(100,100,200,300);
+
+        //draw a red rectangle
+        ctx.fillStyle = "red";
+        ctx.fillRect(350,50,100,100);
+
+        //circle
+        ctx.fillStyle = "pink";
+        ctx.strokeStyle = "green";
+        ctx.lineWidth = 10;
+
+        //first, define shape
+        ctx.beginPath();
+        ctx.arc(400,400,75,-Math.PI,0);
+
+        //then, fill the shape
+        ctx.fill();
+        ctx.stroke();
+
+        //oval
+        ctx.fillStyle = "yellow";
+        ctx.strokeStyle = "orange";
+        ctx.lineWidth = 5;
+        
+        ctx.beginPath();
+        ctx.ellipse(
+            400,600, //x and y centerpoints.
+            250,85, //x and y raidius
+            Math.PI/3, // rotation
+            0,2*Math.PI // start, stop
+        );
+
+        ctx.fill();
+        ctx.stroke();
+
+        //triangle
+        ctx.fillStyle = "blue"
+
+        ctx.beginPath();
+        ctx.moveTo(700,10);
+        ctx.lineTo(770,100);
+        ctx.lineTo(630,100);
+        ctx.lineTo(700,10)
+        ctx.fill();
+
+        </script>
+    </body>
+</html>
