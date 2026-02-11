@@ -12,7 +12,7 @@ ctx.beginPath();
 ctx.arc(600,400,200,0,2*Math.PI);
 ctx.fill();
 
-//nexk
+//neck
 ctx.fillRect(500,550,200,100);
 
 //eyes
@@ -71,3 +71,11 @@ ctx.moveTo(600,400);
 ctx.lineTo(610,430);
 ctx.lineTo(600,430);
 ctx.stroke();
+
+//hair
+ctx.fillStyle = "#595144";
+
+ctx.beginPath();
+ctx.arc(600,400,200,1.15*Math.PI,1.85*Math.PI);
+ctx.lineTo(680,270);
+ctx.fill();
