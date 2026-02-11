@@ -13,7 +13,7 @@ ctx.arc(600,400,200,0,2*Math.PI);
 ctx.fill();
 
 //neck
-ctx.fillRect(500,550,200,100);
+ctx.fillRect(500,550,200,120);
 
 //eyes
 //sclera
@@ -78,4 +78,39 @@ ctx.fillStyle = "#595144";
 ctx.beginPath();
 ctx.arc(600,400,200,1.15*Math.PI,1.85*Math.PI);
 ctx.lineTo(680,270);
+ctx.fill();
+
+//sweater
+ctx.fillStyle = "black";
+ctx.strokeStyle = "#383838ff";
+ctx.lineWidth = 6;
+
+ctx.beginPath();
+ctx.moveTo(200,800);
+ctx.lineTo(200,730);
+ctx.arc(230,700,30,Math.PI,1.5*Math.PI);
+ctx.lineTo(940,670);
+ctx.arc(970,700,30,1.5*Math.PI,0);
+ctx.lineTo(1000,800);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(400,800);
+ctx.lineTo(400,750);
+ctx.moveTo(800,800);
+ctx.lineTo(800,750);
+ctx.stroke();
+
+//neckhole
+ctx.fillStyle = "#eac09d";
+ctx.lineWidth = 10
+
+ctx.beginPath();
+ctx.ellipse(600,668,100,50,0,0,Math.PI);
+ctx.stroke();
+ctx.fill();
+
+ctx.beginPath();
+ctx.ellipse(600,668,100,50,0,0,2*Math.PI);
 ctx.fill();
