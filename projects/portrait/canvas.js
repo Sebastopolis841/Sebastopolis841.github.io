@@ -114,3 +114,35 @@ ctx.fill();
 ctx.beginPath();
 ctx.ellipse(600,668,100,50,0,0,2*Math.PI);
 ctx.fill();
+
+//glasses
+ctx.strokeStyle = "#3d3e42"
+ctx.lineWidth = 4;
+
+ctx.beginPath();
+
+//left side
+
+ctx.moveTo(410,330);
+ctx.lineTo(422,318);
+ctx.lineTo(468,327);
+ctx.lineTo(468,370);
+ctx.lineTo(473,375);
+ctx.lineTo(568,375);
+ctx.lineTo(573,370);
+ctx.lineTo(573,327);
+ctx.lineTo(468,327);
+
+//right side
+
+ctx.lineTo(628,327);
+ctx.lineTo(628,370);
+ctx.lineTo(633,375);
+ctx.lineTo(728,375);
+ctx.lineTo(733,370);
+ctx.lineTo(733,327);
+ctx.lineTo(628,327);
+ctx.moveTo(733,327);
+ctx.lineTo(777,318);
+ctx.lineTo(789,330);
+ctx.stroke();
