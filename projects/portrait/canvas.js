@@ -9,7 +9,7 @@ ctx.fillRect(0,0,1200,800);
 //head
 ctx.fillStyle = "#eac09d";
 ctx.beginPath();
-ctx.arc(600,400,200,0,2*Math.PI);
+ctx.ellipse(600,410,190,210,0,0,2*Math.PI);
 ctx.fill();
 
 //neck
