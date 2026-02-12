@@ -6,6 +6,56 @@ const ctx = canvas.getContext("2d");
 ctx.fillStyle = "#1ccaff";
 ctx.fillRect(0,0,1200,800);
 
+//rocket
+//top
+ctx.fillStyle = "red";
+ctx.strokeStyle = "black";
+ctx.lineWidth = 6;
+
+ctx.beginPath();
+ctx.moveTo(200,100);
+ctx.lineTo(250,200);
+ctx.lineTo(150,200);
+ctx.lineTo(200,100);
+ctx.fill();
+
+//middle
+ctx.fillStyle = "#626262ff";
+
+ctx.fillRect(150,200,100,350);
+
+//side fins
+ctx.fillStyle = "red";
+
+//left
+ctx.beginPath();
+ctx.moveTo(150,350);
+ctx.lineTo(150,450);
+ctx.lineTo(75,475);
+ctx.lineTo(50,525);
+ctx.lineTo(40,470);
+ctx.lineTo(150,350);
+ctx.fill();
+
+//right
+ctx.beginPath();
+ctx.moveTo(250,350);
+ctx.lineTo(250,450);
+ctx.lineTo(325,475);
+ctx.lineTo(350,525);
+ctx.lineTo(360,470);
+ctx.lineTo(250,350);
+ctx.fill();
+
+//bottom
+ctx.beginPath();
+ctx.moveTo(165,550);
+ctx.lineTo(235,550);
+ctx.lineTo(250,600);
+ctx.lineTo(150,600);
+ctx.lineTo(165,550);
+ctx.fill();
+
 //head
 ctx.fillStyle = "#eac09d";
 ctx.beginPath();
