@@ -56,6 +56,46 @@ ctx.lineTo(150,600);
 ctx.lineTo(165,550);
 ctx.fill();
 
+//FIRE!!!
+ctx.fillStyle = "#ec9d48ff";
+
+ctx.beginPath();
+ctx.moveTo(155,600);
+ctx.lineTo(245,600);
+ctx.lineTo(270,800);
+ctx.lineTo(130,800);
+ctx.lineTo(155,600);
+ctx.fill();
+
+//fire lines
+ctx.strokeStyle = "#f0c89eff";
+ctx.lineWidth = 3;
+
+ctx.beginPath();
+
+//left
+ctx.moveTo(165,620);
+ctx.lineTo(160,680);
+
+ctx.moveTo(170,690);
+ctx.lineTo(165,750);
+
+ctx.moveTo(150,760);
+ctx.lineTo(145,820);
+
+//middle
+ctx.moveTo(200,620);
+ctx.lineTo(200,680);
+
+ctx.moveTo(195,760);
+ctx.lineTo(195,820);
+
+//right
+ctx.moveTo(235,620);
+ctx.lineTo(240,680);
+
+ctx.stroke();
+
 //head
 ctx.fillStyle = "#eac09d";
 ctx.beginPath();
