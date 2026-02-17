@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas - with functions!</title>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Canvas - with functions!</h1>
+
+        <canvas id="canvas" width=1000 height=1000>
+        </canvas>
+        
+        <script>
+            //MAGIC
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+
+            //functions
+            function circ(top,left,radius,fillColor,strokeColor) {
+                ctx.fillStyle = fillColor;
+                ctx.strokeStyle = strokeColor;
+                
+                ctx.beginPath();
+                ctx.arc(top,left,radius,0,2*Math.PI);
+
+                ctx.fill();
+                ctx.stroke();
+            }
+
+            function snow(top,left,radius) {
+                circ(top,left,radius,"white","black");
+            }
+
+            function coal(top,left) {
+                circ(top,left,10,"black","black");
+            }
+
+            function fillRectWithColor(top,left,width,height,color) {
+                ctx.fillStyle = color;
+
+                ctx.fillRect(top,left,width,height);
+            }
+
+            function line(x1,y1,x2,y2,color,width) {
+                ctx.strokeColor = color;
+                ctx.lineWidth = width;
+                
+                ctx.moveTo(x1,y1);
+                ctx.lineTo(x2,y2);
+
+                ctx.stroke();
+            }
+
+            function stick(x1,y1,x2,y2) {
+                line(x1,y1,x2,y2,"brown",5);
+            }
+
+            //snow
+            snow(500,75,75);
+            snow(500,275,125);
+            snow(500,600,200);
+
+            //eyes
+            coal(475,50);
+            coal(525,50);
+
+            //mouth
+            coal(460,90);
+            coal(485,110);
+            coal(515,110);
+            coal(540,90);
+
+            //nose
+            circ(500,75,10,"orange","orange");
+
+            //buttons
+            coal(500,200);
+            coal(500,325);
+            coal(500,475);
+
+            //ground
+            fillRectWithColor(0,800,1000,200,"#c9f2ff");
+            fillRectWithColor(0,800,1000,10,"#def7ff");
+
+            //arms
+            stick(620,250,775,150);
+            stick(380,250,225,150);
+            
+        </script>
+    </body>
+</html>
