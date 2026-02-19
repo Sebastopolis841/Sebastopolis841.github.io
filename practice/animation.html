@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Canvas - with functions!</title>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Canvas - with functions!</h1>
+
+        <canvas id="canvas" width=1000 height=1000>
+        </canvas>
+        
+        <script>
+            //MAGIC
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            
+            //functions
+            function animate() {
+                y = y * 1.001;
+                x = x + 1 * y;
+                posX = posX + x;
+
+                if (posX >= 1000) {
+                    posX = Xmin;
+                    posY = posY + 10;
+                }
+
+                if (posY >= 1000) {
+                    posY = Ymin;
+                    Xmin += 10
+                }
+
+                if (Xmin >= 1000) {
+                    Xmin = 0;
+                    Ymin = Ymin + 10;
+                }
+
+                ctx.clearRect(0,0,1000,1000);
+                ctx.fillRect(posX,posY,100,100);
+
+                requestAnimationFrame(animate);
+            }
+            //body
+            let x = 1;
+            let y = 1;
+            let posX = 0;
+            let posY = 0;
+            let Xmin = 0;
+            let Ymin = 0;
+
+            ctx.fillStyle = "green";
+
+            animate();
+            
+        </script>
+    </body>
+</html>
