@@ -21,23 +21,32 @@
             
             //functions
             function animate() {
-                y = y * 1.001;
+                y = y * 1.00001;
                 x = x + 1 * y;
-                posX = posX + x;
+
+                if (inv == false) {
+                    posX = posX + x;
+                } else {
+                    posX = posX - x;
+                }
+                
 
                 if (posX >= 1000) {
-                    posX = Xmin;
+                    posX = 0;
                     posY = posY + 10;
+                } else if (posX <= 0) {
+                    posX = 900;
+                    posY = posY - 10;
                 }
 
                 if (posY >= 1000) {
-                    posY = Ymin;
-                    Xmin += 10
-                }
-
-                if (Xmin >= 1000) {
-                    Xmin = 0;
-                    Ymin = Ymin + 10;
+                    inv = true;
+                    posY = 900;
+                    posX = 9000;
+                } else if (posY <= 0) {
+                    inv = false;
+                    posY = 0;
+                    posX = 0;
                 }
 
                 ctx.clearRect(0,0,1000,1000);
@@ -50,8 +59,7 @@
             let y = 1;
             let posX = 0;
             let posY = 0;
-            let Xmin = 0;
-            let Ymin = 0;
+            let inv = false;
 
             ctx.fillStyle = "green";
 
