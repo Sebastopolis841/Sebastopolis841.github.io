@@ -22,7 +22,6 @@
             
             //functions
             function cube1() {
-                console.log(1);
                 if (posX1 == 600 && posY1 != 0) {
                     posY1 = posY1 - 10;
                 }  else if (posX1 == 0 && posY1 != 600) {
@@ -39,14 +38,13 @@
             }
 
             function cube2() {
-                console.log(2);
                 if (posX2 == 450 && posY2 != 200) {
                     posY2 = posY2 - 10;
                 }  else if (posX2 == 200 && posY2 != 450) {
                     posY2 = posY2 + 10;
                 } else if (posY2 == 200 && posX2 != 200) {
                     posX2 = posX2 - 10;
-                } else if (posY2== 450 && posX2 != 450) {
+                } else if (posY2 == 450 && posX2 != 450) {
                     posX2 = posX2 + 10;
                 }
 
@@ -54,9 +52,29 @@
                 ctx.fillRect(posX2,posY2,150,150);
             }
 
+            function cube3() {
+                if (posX3 == 400 && posY3 != 350) {
+                    posY3 = posY3 - 10;
+                    console.log("up");
+                }  else if (posX3 == 350 && posY3 != 400) {
+                    posY3 = posY3 + 10;
+                    console.log("down");
+                } else if (posY3 == 350 && posX3 != 350) {
+                    posX3 = posX3 - 10;
+                    console.log("left");
+                } else if (posY3 == 400 && posX3 != 400) {
+                    posX3 = posX3 + 10;
+                    console.log("right");
+                }
+
+                ctx.fillStyle = "red";
+                ctx.fillRect(posX3,posY3,50,50);
+            }
+
             function animate() {
                 cube1();
                 cube2();
+                cube3();
 
                 requestAnimationFrame(animate);
             }
@@ -67,8 +85,8 @@
             let posX2 = 200;
             let posY2 = 200;
 
-            let posX3 = 400;
-            let posY3 = 400;
+            let posX3 = 350;
+            let posY3 = 350;
             
             animate();
             
