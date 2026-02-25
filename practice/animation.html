@@ -55,16 +55,12 @@
             function cube3() {
                 if (posX3 == 400 && posY3 != 350) {
                     posY3 = posY3 - 10;
-                    console.log("up");
                 }  else if (posX3 == 350 && posY3 != 400) {
                     posY3 = posY3 + 10;
-                    console.log("down");
                 } else if (posY3 == 350 && posX3 != 350) {
                     posX3 = posX3 - 10;
-                    console.log("left");
                 } else if (posY3 == 400 && posX3 != 400) {
                     posX3 = posX3 + 10;
-                    console.log("right");
                 }
 
                 ctx.fillStyle = "red";
