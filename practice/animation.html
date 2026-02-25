@@ -23,13 +23,13 @@
             //functions
             function cube1() {
                 if (posX1 == 600 && posY1 != 0) {
-                    posY1 = posY1 - speed;
+                    posY1 = posY1 - speed1;
                 }  else if (posX1 == 0 && posY1 != 600) {
-                    posY1 = posY1 + speed;
+                    posY1 = posY1 + speed1;
                 } else if (posY1 == 0 && posX1 != 0) {
-                    posX1 = posX1 - speed;
+                    posX1 = posX1 - speed1;
                 } else {
-                    posX1 = posX1 + speed;
+                    posX1 = posX1 + speed1;
                 }
 
                 ctx.fillStyle = "green";
@@ -39,13 +39,13 @@
 
             function cube2() {
                 if (posX2 == 450 && posY2 != 200) {
-                    posY2 = posY2 - speed;
+                    posY2 = posY2 - speed2;
                 }  else if (posX2 == 200 && posY2 != 450) {
-                    posY2 = posY2 + speed;
+                    posY2 = posY2 + speed2;
                 } else if (posY2 == 200 && posX2 != 200) {
-                    posX2 = posX2 - speed;
+                    posX2 = posX2 - speed2;
                 } else {
-                    posX2 = posX2 + speed;
+                    posX2 = posX2 + speed2;
                 }
 
                 ctx.fillStyle = "yellow";
@@ -54,13 +54,13 @@
 
             function cube3() {
                 if (posX3 == 400 && posY3 != 350) {
-                    posY3 = posY3 - speed;
+                    posY3 = posY3 - speed3;
                 }  else if (posX3 == 350 && posY3 != 400) {
-                    posY3 = posY3 + speed;
+                    posY3 = posY3 + speed3;
                 } else if (posY3 == 350 && posX3 != 350) {
-                    posX3 = posX3 - speed;
+                    posX3 = posX3 - speed3;
                 } else {
-                    posX3 = posX3 + speed;
+                    posX3 = posX3 + speed3;
                 }
 
                 ctx.fillStyle = "red";
@@ -84,7 +84,9 @@
             let posX3 = 350;
             let posY3 = 350;
 
-            let speed = 10
+            let speed1 = 50
+            let speed2 = 25
+            let speed3 = 10
             
             animate();
             
