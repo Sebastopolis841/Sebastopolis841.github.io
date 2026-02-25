@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Parade!!!</title>
+        <style>
+            canvas {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Parade!!!</h1>
+
+        <canvas id="canvas" width=800 height=800>
+        </canvas>
+        
+        <script>
+
+            //MAGIC
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            
+            //functions
+            function circ(top,left,radius) {
+                ctx.beginPath();
+                ctx.arc(top,left,radius,0,2*Math.PI);
+
+                ctx.fill();
+            }
+
+            function cube1(down) {
+                if (down == false) {
+                    if (posX1 == 600 && posY1 != 0) {
+                        posY1 -= speed1;
+
+                    }  else if (posX1 == 0 && posY1 != 600) {
+                        posY1 += speed1;
+
+                    } else if (posY1 == 0 && posX1 != 0) {
+                        posX1 -= speed1;
+
+                    } else {
+                        posX1 += speed1;
+                    }
+
+                } else {
+                    posY1 += 10;
+                }
+
+                ctx.fillStyle = "green";
+                ctx.clearRect(0,0,800,800);
+                ctx.fillRect(posX1,posY1,200,200);
+            }
+
+            function cube2(down) {
+                if (down == false) {
+                    if (posX2 == 450 && posY2 != 200) {
+                        posY2 -= speed2;
+
+                    }  else if (posX2 == 200 && posY2 != 450) {
+                        posY2 += speed2;
+
+                    } else if (posY2 == 200 && posX2 != 200) {
+                        posX2 -= speed2;
+
+                    } else {
+                        posX2 += speed2;
+                    }
+
+                } else {
+                    posY2 += 10;
+                }
+
+
+                ctx.fillStyle = "yellow";
+                ctx.fillRect(posX2,posY2,150,150);
+            }
+
+            function cube3(down) {
+                if (down == false) {
+                    if (posX3 == 400 && posY3 != 350) {
+                        posY3 -= speed3;
+
+                    }  else if (posX3 == 350 && posY3 != 400) {
+                        posY3 += speed3;
+
+                    } else if (posY3 == 350 && posX3 != 350) {
+                        posX3 -= speed3;
+
+                    } else {
+                        posX3 += speed3;
+                    }
+
+                } else {
+                    posY3 += 10;
+                }
+
+                ctx.fillStyle = "red";
+                ctx.fillRect(posX3,posY3,50,50);
+            }
+
+            function cubes(down) {
+                cube1(down);
+                cube2(down);
+                cube3(down);
+            }
+
+            function makeCirc(x,y) {
+                circ(x,y,10);
+            }
+
+            function circlesSide() {
+                circleX += 5;
+
+                ctx.fillStyle = "LightSeaGreen";
+
+                makeCirc(circleX,50);
+                makeCirc(circleX,100);
+                makeCirc(circleX,150);
+                makeCirc(circleX,200);
+                makeCirc(circleX,250);
+                makeCirc(circleX,300);
+                makeCirc(circleX,350);
+                makeCirc(circleX,400);
+                makeCirc(circleX,450);
+                makeCirc(circleX,500);
+                makeCirc(circleX,550);
+                makeCirc(circleX,600);
+                makeCirc(circleX,650);
+                makeCirc(circleX,700);
+                makeCirc(circleX,750);
+            }
+
+            function circlesTop() {
+                circleY += 5;
+
+                ctx.fillStyle = "GreenYellow";
+
+                makeCirc(50,circleY);
+                makeCirc(100,circleY);
+                makeCirc(150,circleY);
+                makeCirc(200,circleY);
+                makeCirc(250,circleY);
+                makeCirc(300,circleY);
+                makeCirc(350,circleY);
+                makeCirc(400,circleY);
+                makeCirc(450,circleY);
+                makeCirc(500,circleY);
+                makeCirc(550,circleY);
+                makeCirc(600,circleY);
+                makeCirc(650,circleY);
+                makeCirc(700,circleY);
+                makeCirc(750,circleY);
+                makeCirc(800,circleY);
+            }
+
+            function animate() {
+                time += 1;
+                
+                cubes(cubeDown);
+                
+
+                if (time == 485) {
+                    cubeDown = true;
+                }
+
+                if (time >= 510) {
+                    circlesSide();
+                }
+
+                if (time >= 610) {
+                    circlesTop();
+                }
+                
+
+                requestAnimationFrame(animate);
+            }
+            //body
+            let posX1 = 0;
+            let posY1 = 0;
+
+            let posX2 = 200;
+            let posY2 = 200;
+
+            let posX3 = 350;
+            let posY3 = 350;
+
+            let speed1 = 50;
+            let speed2 = 25;
+            let speed3 = 10;
+
+            let circleX = 0;
+            let circleY = 0;
+
+            let cubeDown = false;
+
+            let time = 0;
+            
+            animate();
+            
+        </script>
+    </body>
+</html>
