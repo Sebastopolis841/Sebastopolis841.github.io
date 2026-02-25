@@ -23,13 +23,13 @@
             //functions
             function cube1() {
                 if (posX1 == 600 && posY1 != 0) {
-                    posY1 = posY1 - 10;
+                    posY1 = posY1 - speed;
                 }  else if (posX1 == 0 && posY1 != 600) {
-                    posY1 = posY1 + 10;
+                    posY1 = posY1 + speed;
                 } else if (posY1 == 0 && posX1 != 0) {
-                    posX1 = posX1 - 10;
-                } else if (posY1 == 600 && posX1 != 600) {
-                    posX1 = posX1 + 10;
+                    posX1 = posX1 - speed;
+                } else {
+                    posX1 = posX1 + speed;
                 }
 
                 ctx.fillStyle = "green";
@@ -39,13 +39,13 @@
 
             function cube2() {
                 if (posX2 == 450 && posY2 != 200) {
-                    posY2 = posY2 - 10;
+                    posY2 = posY2 - speed;
                 }  else if (posX2 == 200 && posY2 != 450) {
-                    posY2 = posY2 + 10;
+                    posY2 = posY2 + speed;
                 } else if (posY2 == 200 && posX2 != 200) {
-                    posX2 = posX2 - 10;
-                } else if (posY2 == 450 && posX2 != 450) {
-                    posX2 = posX2 + 10;
+                    posX2 = posX2 - speed;
+                } else {
+                    posX2 = posX2 + speed;
                 }
 
                 ctx.fillStyle = "yellow";
@@ -54,13 +54,13 @@
 
             function cube3() {
                 if (posX3 == 400 && posY3 != 350) {
-                    posY3 = posY3 - 10;
+                    posY3 = posY3 - speed;
                 }  else if (posX3 == 350 && posY3 != 400) {
-                    posY3 = posY3 + 10;
+                    posY3 = posY3 + speed;
                 } else if (posY3 == 350 && posX3 != 350) {
-                    posX3 = posX3 - 10;
-                } else if (posY3 == 400 && posX3 != 400) {
-                    posX3 = posX3 + 10;
+                    posX3 = posX3 - speed;
+                } else {
+                    posX3 = posX3 + speed;
                 }
 
                 ctx.fillStyle = "red";
@@ -83,6 +83,8 @@
 
             let posX3 = 350;
             let posY3 = 350;
+
+            let speed = 10
             
             animate();
             
