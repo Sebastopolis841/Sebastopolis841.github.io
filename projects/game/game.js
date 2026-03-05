@@ -3,6 +3,23 @@ let gameActive = true; //this variable is required.
 
 //Declare your other global variables here
 
+asciiDragon = `
+        _^__^_
+        / * * /
+    ___/ \\_/ /
+___/^^^^^^^^/
+\\_|_|_|_|_|/
+`;
+
+asciiDog = `
+            ^  ^
+ ^  ^      | \' \'|
+\\ | /      |  * |
+ \\|/_______| \\_/|
+  --|           |
+    |___________|
+      | |   | |
+`;
 
 //If you need, add any "helper" functions here
 
@@ -47,9 +64,12 @@ function locationB() {
 //to locationA
 function start(){
     print("Welcome to my game! Press any key to start");
+    printAscii(asciiDragon);
+    printAscii(asciiDog);
 
     function processInput(input){
             locationA();
     }
+
     waitForInput(processInput);
 }
