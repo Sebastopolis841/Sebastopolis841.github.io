@@ -2,16 +2,8 @@ let gameActive = true; //this variable is required.
                        //to stop the game, set it to false.
 
 //Declare your other global variables here
-class dragon {
-    constructor() {
-        this.name = this.name;
-        this.ascii = this.ascii;
-    }
-}
-
-
 asciiDragon = `
-        _^__^_
+         ^__^_
         / * * /
     ___/ \\_/ /
 ___/^^^^^^^^/
@@ -28,28 +20,100 @@ asciiDog = `
       | |   | |
 `;
 
-petDragon = new dragon("Pet Dragon", asciiDragon);
-doggo = new dragon("Doggo", asciiDog);
+houseLook = false;
 
 //If you need, add any "helper" functions here
+function dragon() {
+    printAscii(asciiDragon);
+}
 
 
 //Make one function for each location
 function house() {
     clear();
     print("\nYou are in your house!");
-    print("\nWhere do you want to go next? Say one of these choices: \n\tlocationA\n\tlocationB");
 
-    function processInput(input) {
-        if (input.toLowerCase() === "locationb") {
-            locationB();
-        } else if (input.toLowerCase() === "locationa") {
-            locationA();
-        } else {
-            stayHere();
-            waitThenCall(house);
+    if (houseLook === false) {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around");
+        function processInput(input) {
+            input = lower(input);
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tlocationA\n\tlocationB");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "locationb") {
+                        locationB();
+                    } else if (input() === "locationa") {
+                        locationA();
+                    } else {
+                        stayHere();
+                        waitThenCall(house);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+        } else if (input === "look around") {
+            print("\n You see your pet dragon and a note on the fridge.");
+
+            printAscii(asciiDragon);
+
+            print("Click enter to continue.");
+            houseLook = true;
+
+            waitForInput(house);
         }
     }
+
+    } else {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around\n\tRead note\n\tGet dragon");
+        function processInput(input) {
+            input = lower(input);
+
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tlocationA\n\tlocationB");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "locationb") {
+                        locationB();
+                    } else if (input() === "locationa") {
+                        locationA();
+                    } else {
+                        stayHere();
+                        waitThenCall(house);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else if (input === "look around") {
+                print("\n You see your pet dragon and a note on the fridge.");
+
+                dragon();
+
+                print("Click enter to continue.");
+                houseLook = true;
+
+               waitForInput(house);
+            } else if (input === "read note") {
+                print("\nThe note reads as follows: \n\n \"Hello player. Make sure to take the pet dragon to the vet today!\"\n");
+                print("\nClick enter to continue.");
+
+                waitForInput(house);
+            } else if (input === "get dragon") {
+                print("\nYou have gotton your pet dragon!");
+
+                dragon();
+
+                print("\n\n\tI need to code this more\n");
+            }
+        }
+    }
+
     waitForInput(processInput);
 }
 
@@ -90,13 +154,13 @@ function locationB() {
 //finally, make sure you customize this to tell it what should happen at the
 //very start. For this simple example, any input will bring you
 //to locationA
-function start(){
+function start() {
     print("Welcome to my game! Press enter to start");
     printAscii(asciiDragon);
     printAscii(asciiDog);
 
     function processInput(input){
-            house();
+        house();
     }
 
     waitForInput(processInput);
