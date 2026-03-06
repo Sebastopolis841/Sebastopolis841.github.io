@@ -61,3 +61,9 @@ function stayHere(){
     print("\nsorry, I don't understand your input. I'll assume you " +
         "want to stay here");
 }
+
+function lower(str) {
+    str = str.toLowerCase();
+
+    return str;
+}
