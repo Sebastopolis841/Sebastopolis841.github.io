@@ -30,6 +30,7 @@ asciiNote = `
 `
 
 let houseLook = false;
+let BYLook = false;
 let backyardLook = false;
 let hasDoggo = false;
 let hasPoster = false;
@@ -176,7 +177,7 @@ function house() {
             
                 waitForInput(processInput);
 
-            } else if (input === "look around") {
+            } else if (input === "look around" || input === "look") {
                 print("\n You see your pet dragon and a note on the fridge.");
 
                 dragon();
@@ -226,7 +227,7 @@ function townHall() {
     
         waitForInput(processInput);
 
-    } else if (input === "look around") {
+    } else if (input === "look around" || input === "look") {
         print("\n You see a poster for dragon competitions!");
 
         printAscii(asciiNote);
@@ -238,6 +239,81 @@ function townHall() {
         waitForInput(townHall);
     }
     
+    waitForInput(processInput);
+}
+
+function backyard() {
+    clear();
+    print("\nYou are in your backyard!");
+
+    if (BYLook === false) {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around");
+        function processInput(input) {
+            input = lower(input);
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tHouse");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "house") {
+                        house();
+                    } else {
+                        stayHere();
+                        waitThenCall(backyard);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+        } else if (input === "look around" || input === "look") {
+            print("\n It is a normal backyard, with a hole in the fence.");
+
+            printAscii(asciiHole);
+
+            print("Click enter to continue.");
+            BYLook = true;
+
+            waitForInput(backyard);
+        }
+    }
+
+    } else {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around");
+        function processInput(input) {
+            input = lower(input);
+
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tHouse\n\tHole");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "house") {
+                        house();
+                    } else if (input === "hole") {
+                        mountain();
+                    } else {
+                        stayHere();
+                        waitThenCall(backyard);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else if (input === "look around" || input === "look") {
+                print("\n You see your pet dragon and a note on the fridge.");
+
+                dragon();
+
+                print("Click enter to continue.");
+                houseLook = true;
+
+               waitForInput(house);
+            }
+        }
+    }
+
     waitForInput(processInput);
 }
 
