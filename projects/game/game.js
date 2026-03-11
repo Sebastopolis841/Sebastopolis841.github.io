@@ -32,6 +32,7 @@ asciiNote = `
 let houseLook = false;
 let backyardLook = false;
 let hasDoggo = false;
+let hasPoster = false;
 
 let seenMt = false;
 let seenTH = false;
@@ -44,12 +45,71 @@ let hasStick = false;
 let drgnStr = 1;
 let drgHp = 3;
 
+let enemyStr = null;
+let enemyHp = null;
+
 let lakeUse = 0;
-let FrstUse = 0;
+let ForestUse = 0;
+
+let wonEasy = false;
+let wonMid = false;
+let wonHard = false;
+
+let goodInput = false;
+
+let checkedIn = false;
 
 //If you need, add any "helper" functions here
-function dragon() {
-    printAscii(asciiDragon);
+function random(min,max) {
+    max += 1 - min;
+
+    return Math.floor(Math.random() * max) - min;
+}
+
+function attkRand() {
+    let mod = random(0,2) - 1;
+    return mod;
+}
+
+function attack() {
+    let damage = drgnStr + attkRand();
+
+    enemyHp -= damage;
+    print("Your dragon attacked the opponent for " + damage + " damage!");
+
+    if (enemyHp <= 0) {
+        print("The opponent dropped below 0 hp and you won the battle!");
+        return "victory";
+    } else {
+        print("The opponent dropped to " + enemyHp + " hp.");
+        return "N/A"
+    }
+}
+
+function oppAttack() {
+    let damage = drgnStr + attkRand();
+
+    drgnHp -= damage;
+    print("Your dragon was attacked for " + damage + " damage!");
+
+}
+
+function battle() {
+    print("Choose an action:\n\tAttack\n\tFlee");
+    function processInput(input) {
+        goodInput = false;
+
+        while (goodInput = false) {
+            input = lower(input);
+            if (input === "attack") {
+                attack();
+            } else if (input === "flee") {
+                return "flee";
+            } else {
+                print("Please select a valid option.");
+            }
+        }
+    }
 }
 
 
@@ -80,10 +140,11 @@ function house() {
             
                 waitForInput(processInput);
 
-        } else if (input === "look around") {
+        } else if (input === "look around" || input === "look") {
             print("\n You see your pet dragon and a note on the fridge.");
 
             printAscii(asciiDragon);
+            printAscii(asciiNote);
 
             print("Click enter to continue.");
             houseLook = true;
@@ -142,89 +203,41 @@ function house() {
     waitForInput(processInput);
 }
 
+
+
 function townHall() {
     clear();
     print("\nYou are in the town hall!");
+        
+    input = lower(input);
+    if (input === "move") {
+        print("\nWhere do you want to go next? Say one of these choices: \n\tVet\n\tForest\n\tLake\n\tCompetitions\nHouse");
 
-    if (houseLook === false) {
-        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around");
         function processInput(input) {
-            input = lower(input);
-            if (input === "move") {
-                print("\nWhere do you want to go next? Say one of these choices: \n\tVet\n\tForest\n\tLake\n\tCompetitions\nHouse");
+            input = input.toLowerCase();
 
-                function processInput(input) {
-                    input = input.toLowerCase();
-
-                    if (input === "house") {
-                        house();
-                    } else {
-                        stayHere();
-                        waitThenCall(townHall);
-                    }
-                }
-            
-                waitForInput(processInput);
-
-        } else if (input === "look around") {
-            print("\n You see a poster for dragon competitions!");
-
-            printAscii(asciiDragon);
-
-            print("Click enter to continue.");
-            houseLook = true;
-
-            waitForInput(townHall);
-        }
-    }
-
-    } else {
-        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around\n\tRead note\n\tGet dragon");
-        function processInput(input) {
-            input = lower(input);
-
-            if (input === "move") {
-                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tlocationB");
-
-                function processInput(input) {
-                    input = input.toLowerCase();
-
-                    if (input === "locationb") {
-                        locationB();
-                    } else if (input() === "town hall") {
-                        townHall();
-                    } else {
-                        stayHere();
-                        waitThenCall(house);
-                    }
-                }
-            
-                waitForInput(processInput);
-
-            } else if (input === "look around") {
-                print("\n You see your pet dragon and a note on the fridge.");
-
-                dragon();
-
-                print("Click enter to continue.");
-                houseLook = true;
-
-               waitForInput(house);
-            } else if (input === "read note") {
-                print("\nThe note reads as follows: \n\n \"Hello player. Make sure to take the pet dragon to the vet today!\"\n");
-                print("\nClick enter to continue.");
-
-                waitForInput(house);
-            } else if (input === "get dragon") {
-                print("\nYou have gotton your pet dragon!");
-
-                dragon();
-
-                print("\n\n\tI need to code this more\n");
+            if (input === "house") {
+                house();
+            } else {
+                stayHere();
+                waitThenCall(townHall);
             }
         }
-    }
+    
+        waitForInput(processInput);
 
+    } else if (input === "look around") {
+        print("\n You see a poster for dragon competitions!");
+
+        printAscii(asciiNote);
+
+        print("Click enter to continue.");
+
+        hasPoster = true;
+
+        waitForInput(townHall);
+    }
+    
     waitForInput(processInput);
 }
 
