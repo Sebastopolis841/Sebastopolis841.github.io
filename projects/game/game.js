@@ -68,22 +68,28 @@ function random(min,max) {
 }
 
 function attkRand() {
-    let mod = random(0,2) - 1;
-    return mod;
+    let modifier = random(0,2) - 1;
+    return modifier;
 }
 
 function attack() {
     let damage = drgnStr + attkRand();
 
     enemyHp -= damage;
-    print("Your dragon attacked the opponent for " + damage + " damage!");
-
-    if (enemyHp <= 0) {
-        print("The opponent dropped below 0 hp and you won the battle!");
+    if (hasDoggo == true) {
+        print("The Doggo attacked the opposing dragon for ∞ damage!");
+        print("Your opponent stands slackjawed and admits defeat.");
         return "victory";
     } else {
-        print("The opponent dropped to " + enemyHp + " hp.");
-        return "N/A"
+        print("Your dragon attacked the opponent for " + damage + " damage!");
+
+        if (enemyHp <= 0) {
+            print("The opponent dropped below 0 hp and you won the battle!");
+            return "victory";
+        } else {
+            print("The opponent dropped to " + enemyHp + " hp.");
+            return "N/A";
+        }
     }
 }
 
@@ -98,9 +104,8 @@ function oppAttack() {
 function battle() {
     print("Choose an action:\n\tAttack\n\tFlee");
     function processInput(input) {
-        goodInput = false;
 
-        while (goodInput = false) {
+        while (true) {
             input = lower(input);
             if (input === "attack") {
                 attack();
@@ -111,6 +116,8 @@ function battle() {
             }
         }
     }
+
+    waitForInput(processInput);
 }
 
 
