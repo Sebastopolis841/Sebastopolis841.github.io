@@ -29,9 +29,19 @@ asciiNote = `
        @~~~~~~~~~~~@
 `
 
+asciiHole = `
+/\\___/\\___/\\___/\\___/\\___/\\
+| | | | | | | | | | | | | |
+| | | | | | | | | | | | | |
+| | | | | | | | | | | | | |
+| | | | /~~~\\ | | | | | | |
+| | | |/   /| | | | | | | |
+| | | |    || | | | | | | |
+`
+
 let houseLook = false;
 let BYLook = false;
-let backyardLook = false;
+let MTLook = false;
 let hasDoggo = false;
 let hasPoster = false;
 
@@ -131,13 +141,13 @@ function house() {
         function processInput(input) {
             input = lower(input);
             if (input === "move") {
-                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tlocationB");
+                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tBackyard");
 
                 function processInput(input) {
                     input = input.toLowerCase();
 
-                    if (input === "locationb") {
-                        locationB();
+                    if (input === "backyard" || input === "by") {
+                        backyard();
                     } else if (input() === "town hall") {
                         townHall();
                     } else {
@@ -158,6 +168,9 @@ function house() {
             houseLook = true;
 
             waitForInput(house);
+        } else {
+            stayHere();
+            waitThenCall(backyard);
         }
     }
 
@@ -167,13 +180,13 @@ function house() {
             input = lower(input);
 
             if (input === "move") {
-                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tlocationB");
+                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tBackyard");
 
                 function processInput(input) {
                     input = input.toLowerCase();
 
-                    if (input === "locationb") {
-                        locationB();
+                    if (input === "backyard" || input === "by") {
+                        backyard();
                     } else if (input() === "town hall") {
                         townHall();
                     } else {
@@ -203,7 +216,10 @@ function house() {
 
                 dragon();
 
-                print("\n\n\tI need to code this more\n");
+                hasDragon = true;
+            } else {
+                stayHere();
+                waitThenCall(house);
             }
         }
     }
@@ -244,6 +260,9 @@ function townHall() {
         hasPoster = true;
 
         waitForInput(townHall);
+    } else {
+        stayHere();
+        waitThenCall(townHall);
     }
     
     waitForInput(processInput);
@@ -282,6 +301,9 @@ function backyard() {
             BYLook = true;
 
             waitForInput(backyard);
+        } else {
+            stayHere();
+            waitThenCall(backyard);
         }
     }
 
@@ -309,14 +331,17 @@ function backyard() {
                 waitForInput(processInput);
 
             } else if (input === "look around" || input === "look") {
-                print("\n You see your pet dragon and a note on the fridge.");
+                print("\n It is a normal backyard, with a hole in the fence.");
 
-                dragon();
+                printAscii(asciiHole);
 
                 print("Click enter to continue.");
-                houseLook = true;
+                BYLook = true;
 
-               waitForInput(house);
+                waitForInput(backyard);
+            } else {
+                stayHere();
+                waitThenCall(backyard);
             }
         }
     }
@@ -324,20 +349,91 @@ function backyard() {
     waitForInput(processInput);
 }
 
-function locationB() {
+function mountain() {
     clear();
-    print("\nYou are in location B!");
-    print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tTown Hall");
-    
-    function processInput(input){
-        if (input.toLowerCase() === "town hall") {
-            townHall();
+    print("\nYou are in the mountains!");
+
+    if (MTLook === false) {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around");
+        function processInput(input) {
+            input = lower(input);
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tBackyard");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "backyard" || input === "by") {
+                        backyard();
+                    } else {
+                        stayHere();
+                        waitThenCall(mountain);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+        } else if (input === "look around" || input === "look") {
+            print("\n In the distance, you see what appears to be a badly drawn dog.");
+
+            printAscii(asciiDog);
+
+            print("Click enter to continue.");
+            MTLook = true;
+
+            waitForInput(mountain);
         } else {
             stayHere();
-            waitThenCall(locationB);
+            waitThenCall(mountain);
         }
     }
+
+    } else {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around\n\tGet dog");
+        function processInput(input) {
+            input = lower(input);
+
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tBackyard");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "backyard" || input === "by") {
+                        house();
+                    } else {
+                        stayHere();
+                        waitThenCall(mountain);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else if (input === "look around" || input === "look") {
+                print("\n In the distance, you see what appears to be a badly drawn dog.");
+
+                printAscii(asciiDog);
+
+                print("Click enter to continue.");
+                MTLook = true;
+
+                waitForInput(mountain);
+            } else if (input === "get dog" || input === "get" || input ==="dog") {
+                print("You got the dog!")
+
+                printAscii(asciiDog);
+
+                print("Click enter to continue.");
+                hasDoggo = true
+
+                waitForInput(mountain)
+            } else {
+                stayHere();
+                waitThenCall(mountain);
+            }
+        }
+    }
+
     waitForInput(processInput);
 }
 
@@ -348,6 +444,7 @@ function start() {
     print("Welcome to my game! Press enter to start");
     printAscii(asciiDragon);
     printAscii(asciiDog);
+    printAscii(asciiHole);
 
     function processInput(input){
         house();
