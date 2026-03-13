@@ -442,9 +442,6 @@ function mountain() {
 //to townHall
 function start() {
     print("Welcome to my game! Press enter to start");
-    printAscii(asciiDragon);
-    printAscii(asciiDog);
-    printAscii(asciiHole);
 
     function processInput(input){
         house();
