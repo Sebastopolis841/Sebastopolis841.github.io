@@ -212,12 +212,14 @@ function house() {
                 print("\nClick enter to continue.");
 
                 waitForInput(house);
-            } else if (input === "get dragon") {
+            } else if (input === "get dragon" || input === "get" || input === "dragon") {
                 print("\nYou have gotton your pet dragon!");
 
                 dragon();
 
                 hasDragon = true;
+                
+                waitForInput(house);
             } else {
                 stayHere();
                 waitThenCall(house);
@@ -243,6 +245,8 @@ function townHall() {
 
             if (input === "house") {
                 house();
+            } else if (input === "vet") {
+                vet();
             } else {
                 stayHere();
                 waitThenCall(townHall);
