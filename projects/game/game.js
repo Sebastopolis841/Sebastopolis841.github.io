@@ -44,6 +44,7 @@ let BYLook = false;
 let MTLook = false;
 let hasDoggo = false;
 let hasPoster = false;
+let hasDragon = false;
 
 let seenMt = false;
 let seenTH = false;
@@ -430,6 +431,70 @@ function mountain() {
             } else {
                 stayHere();
                 waitThenCall(mountain);
+            }
+        }
+    }
+
+    waitForInput(processInput);
+}
+
+function vet() {
+    clear();
+    print("\nYou are in the vet's office!");
+
+    if (hasDragon === false) {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove");
+        function processInput(input) {
+            input = lower(input);
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "town hall") {
+                        townHall();
+                    } else {
+                        stayHere();
+                        waitThenCall(vet);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else {
+                stayHere();
+                waitThenCall(vet);
+            }
+    }
+
+    } else {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tCheck in");
+        function processInput(input) {
+            input = lower(input);
+
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "town hall") {
+                        townHall();
+                    } else {
+                        stayHere();
+                        waitThenCall(vet);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else if (input === "check in") {
+                print("<h1>You win the boring ending</h1>")
+                print("You got the dragon to the vet. BOOORING!")
+            } else {
+                stayHere();
+                waitThenCall(vet);
             }
         }
     }
