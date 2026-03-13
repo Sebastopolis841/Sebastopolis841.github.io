@@ -149,7 +149,7 @@ function house() {
 
                     if (input === "backyard" || input === "by") {
                         backyard();
-                    } else if (input() === "town hall") {
+                    } else if (input === "town hall") {
                         townHall();
                     } else {
                         stayHere();
@@ -188,7 +188,7 @@ function house() {
 
                     if (input === "backyard" || input === "by") {
                         backyard();
-                    } else if (input() === "town hall") {
+                    } else if (input === "town hall") {
                         townHall();
                     } else {
                         stayHere();
@@ -214,8 +214,9 @@ function house() {
                 waitForInput(house);
             } else if (input === "get dragon" || input === "get" || input === "dragon") {
                 print("\nYou have gotton your pet dragon!");
+                print("Click enter to continue.")
 
-                dragon();
+                printAscii(asciiDragon);
 
                 hasDragon = true;
                 
@@ -235,8 +236,8 @@ function house() {
 function townHall() {
     clear();
     print("\nYou are in the town hall!");
-        
-    input = lower(input);
+    print("What would you like to do? Say one of these choices: \n\tMove\n\tLook around");
+    input = input.toLowerCase();
     if (input === "move") {
         print("\nWhere do you want to go next? Say one of these choices: \n\tVet\n\tForest\n\tLake\n\tCompetitions\nHouse");
 
@@ -269,8 +270,6 @@ function townHall() {
         stayHere();
         waitThenCall(townHall);
     }
-    
-    waitForInput(processInput);
 }
 
 function backyard() {
