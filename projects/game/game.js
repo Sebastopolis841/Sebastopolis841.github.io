@@ -207,7 +207,7 @@ function house() {
                 houseLook = true;
 
                waitForInput(house);
-            } else if (input === "read note") {
+            } else if (input === "read note" || input === "read" || input === "note") {
                 print("\nThe note reads as follows: \n\n \"Hello player. Make sure to take the pet dragon to the vet today!\"\n");
                 print("\nClick enter to continue.");
 
@@ -249,6 +249,8 @@ function townHall() {
                     house();
                 } else if (input === "vet") {
                     vet();
+                } else if (input === "forest") {
+                    forest();
                 } else {
                     stayHere();
                     waitThenCall(townHall);
@@ -427,14 +429,18 @@ function mountain() {
 
                 waitForInput(mountain);
             } else if (input === "get dog" || input === "get" || input ==="dog") {
-                print("You got the dog!")
+                if (hasStick === true) {
+                    print("You got the dog!")
 
-                printAscii(asciiDog);
+                    printAscii(asciiDog);
 
-                print("Click enter to continue.");
-                hasDoggo = true
+                    print("Click enter to continue.");
+                    hasDoggo = true
 
-                waitForInput(mountain)
+                    waitForInput(mountain)
+                } else {
+                    print("The dog growls at you and dashes away. If only you had a way to tame it...")
+                }
             } else {
                 stayHere();
                 waitThenCall(mountain);
@@ -507,6 +513,107 @@ function vet() {
     }
 
     waitForInput(processInput);
+}
+
+function forest() {
+    clear();
+    print("\nYou are in the forest!");
+    if (hasDragon === true) {
+    print("What would you like to do? Say one of these choices: \n\tMove\n\tForage\n\tFight");
+        function processInput(input) {
+            input = input.toLowerCase();
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tLake\n\tTown Hall");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "lake") {
+                        lake();
+                    } else if (input === "town hall") {
+                        townHall();
+                    } else {
+                        stayHere();
+                        waitThenCall(forest);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else if (input === "forage") {
+                let forageResult = random(1,10);
+
+                if (forageResult === 10) {
+                    hasStick = true;
+                    print("You found a stick! I wonder what you could use this for...");
+                } else if (forageResult >= 7 && forageResult <= 9) {
+                    print("You found a berry! It tastes sweet.");
+                } else if (forageResult >= 4 && forageResult <= 6) {
+                    print("You almost got lost and had to turn back.")
+                } else if (forageResult === 2 || forageResult === 3) {
+                    print("You hear a low growl in the distance and run off in fear.")
+                } else {
+                    print("You tripped on a pinecone and fell on your face.")
+                }
+
+                waitForInput(forest);
+            } else if (input === "train") {
+                if (!(forestUse === 5)) {
+                    print("Your dragon takes on a woodland animal. It comes back with a few nicks and scratches, but overall looks hardier now.")
+                    drgnHp += random(1,2);
+                    print("Your dragon now has " + drgnHp + " HP!")
+                }
+            } else {
+                stayHere();
+                waitThenCall(forest);
+            }
+        }
+    } else {
+        function processInput(input) {
+            input = input.toLowerCase();
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tLake\n\tTown Hall");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "lake") {
+                        lake();
+                    } else if (input === "town hall") {
+                        townHall();
+                    } else {
+                        stayHere();
+                        waitThenCall(forest);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else if (input === "forage") {
+                let forageResult = random(1,10);
+
+                if (forageResult === 10) {
+                    hasStick = true;
+                    print("You found a stick! I wonder what you could use this for...");
+                } else if (forageResult >= 7 && forageResult <= 9) {
+                    print("You found a berry! It tastes sweet.");
+                } else if (forageResult >= 4 && forageResult <= 6) {
+                    print("You almost got lost and had to turn back.")
+                } else if (forageResult === 2 || forageResult === 3) {
+                    print("You hear a low growl in the distance and run off in fear.")
+                } else {
+                    print("You tripped on a pinecone and fell on your face.")
+                }
+
+                waitForInput(forest);
+            } else {
+                stayHere();
+                waitThenCall(forest);
+            }
+        }
+    }
+
+    waitForInput(processInput)
 }
 
 //finally, make sure you customize this to tell it what should happen at the
