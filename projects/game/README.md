@@ -19,6 +19,8 @@ graph TD;
     townHall<-->comps[Dragon Competitions];
     townHall<-->Vet;
 
+    Lake<-->Forest
+
     comps<-->easy[Easy Room];
     comps<-->mid[Medium Room];
     comps<-->hard[Hard Room];
