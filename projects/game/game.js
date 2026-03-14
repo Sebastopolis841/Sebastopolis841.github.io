@@ -237,39 +237,43 @@ function townHall() {
     clear();
     print("\nYou are in the town hall!");
     print("What would you like to do? Say one of these choices: \n\tMove\n\tLook around");
-    input = input.toLowerCase();
-    if (input === "move") {
-        print("\nWhere do you want to go next? Say one of these choices: \n\tVet\n\tForest\n\tLake\n\tCompetitions\nHouse");
+    function processInput(input) {
+        input = input.toLowerCase();
+        if (input === "move") {
+            print("\nWhere do you want to go next? Say one of these choices: \n\tVet\n\tForest\n\tLake\n\tCompetitions\nHouse");
 
-        function processInput(input) {
-            input = input.toLowerCase();
+            function processInput(input) {
+                input = input.toLowerCase();
 
-            if (input === "house") {
-                house();
-            } else if (input === "vet") {
-                vet();
-            } else {
-                stayHere();
-                waitThenCall(townHall);
+                if (input === "house") {
+                    house();
+                } else if (input === "vet") {
+                    vet();
+                } else {
+                    stayHere();
+                    waitThenCall(townHall);
+                }
             }
+        
+            waitForInput(processInput);
+
+        } else if (input === "look around" || input === "look") {
+            print("\n You see a poster for dragon competitions!");
+
+            printAscii(asciiNote);
+
+            print("Click enter to continue.");
+
+            hasPoster = true;
+
+            waitForInput(townHall);
+        } else {
+            stayHere();
+            waitThenCall(townHall);
         }
-    
-        waitForInput(processInput);
-
-    } else if (input === "look around" || input === "look") {
-        print("\n You see a poster for dragon competitions!");
-
-        printAscii(asciiNote);
-
-        print("Click enter to continue.");
-
-        hasPoster = true;
-
-        waitForInput(townHall);
-    } else {
-        stayHere();
-        waitThenCall(townHall);
     }
+
+    waitForInput(processInput)
 }
 
 function backyard() {
