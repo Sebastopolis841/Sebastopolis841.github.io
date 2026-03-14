@@ -55,7 +55,8 @@ let seenFrst = false;
 let hasStick = false;
 
 let drgnStr = 1;
-let drgHp = 3;
+let drgnHp = 3;
+let drgnTempHp = 3;
 
 let enemyStr = null;
 let enemyHp = null;
@@ -107,8 +108,9 @@ function attack() {
 function oppAttack() {
     let damage = drgnStr + attkRand();
 
-    drgnHp -= damage;
+    drgnTempHp -= damage;
     print("Your dragon was attacked for " + damage + " damage!");
+    print("Your dragon droppd to " + drgnTempHP + " HP!");
 
 }
 
@@ -561,6 +563,7 @@ function forest() {
                 if (!(forestUse === 5)) {
                     print("Your dragon takes on a woodland animal. It comes back with a few nicks and scratches, but overall looks hardier now.")
                     drgnHp += random(1,2);
+                    drgnTempHP = drgnHp;
                     print("Your dragon now has " + drgnHp + " HP!")
                 }
             } else {
