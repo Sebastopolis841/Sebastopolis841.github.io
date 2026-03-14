@@ -242,7 +242,7 @@ function townHall() {
     function processInput(input) {
         input = input.toLowerCase();
         if (input === "move") {
-            print("\nWhere do you want to go next? Say one of these choices: \n\tVet\n\tForest\n\tLake\n\tCompetitions\nHouse");
+            print("\nWhere do you want to go next? Say one of these choices: \n\tVet\n\tForest\n\tLake\n\tCompetitions\n\tHouse");
 
             function processInput(input) {
                 input = input.toLowerCase();
@@ -253,6 +253,8 @@ function townHall() {
                     vet();
                 } else if (input === "forest") {
                     forest();
+                } else if (input === "lake") {
+                    lake();
                 } else {
                     stayHere();
                     waitThenCall(townHall);
@@ -622,7 +624,7 @@ function forest() {
 
 function lake() {
     clear();
-    print("\nYou are in the forest!");
+    print("\nYou are in the lake!");
     if (hasDragon === true) {
     print("What would you like to do? Say one of these choices: \n\tMove\n\tFight");
         function processInput(input) {
@@ -657,6 +659,7 @@ function lake() {
             }
         }
     } else {
+        print("What would you like to do? Say one of these choices: \n\tMove")
         function processInput(input) {
             input = input.toLowerCase();
             if (input === "move") {
