@@ -36,7 +36,12 @@ In this game, the most important global varialble are:
 - hasDragon, which is a boolean checking if you have your dragon of not.
 - hasDoggo, which is a boolean checking if you have the dog or not. If you have the dog, the battles run differently and  you can win much more easily.
 - checkedIn, which checks if you have checked into the competition or not. If you haven't, then you are unable to enter the competition rooms.
+- drgnHP & drgnStr, which measure the dragon's HP and Strength respectively. These are important because it it nesscesary to get these stats high enough to win the competition.
 
 ## Story
 
 In my game, you start out in your home, and when you look around, you see your pet dragon and a note saying to take said pet dragon to the vet. Along the way, you can find a poster for a dragon competition, and can then choose to go there instead of the vet. In the mountains, there is also a legendary dog that must be tamed with a stick from the forest. Once tamed, the dog replaces your dragon in combat and is invincible, dealing ∞ damage.
+
+## Misc.
+
+Fun fact: A lot of the places and actions have abbr. names that can be used as well as the main one using or statements.
