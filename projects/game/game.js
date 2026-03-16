@@ -68,8 +68,6 @@ let wonEasy = false;
 let wonMid = false;
 let wonHard = false;
 
-let goodInput = false;
-
 let checkedIn = false;
 
 //If you need, add any "helper" functions here
