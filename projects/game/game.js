@@ -110,27 +110,59 @@ function oppAttack() {
     print("Your dragon was attacked for " + damage + " damage!");
     print("Your dragon droppd to " + drgnTempHP + " HP!");
 
+    if (drgnTempHp <= 0) {
+        lose();
+    }
+
 }
 
-function battle() {
+function battle(str,hp) {
+    enemyStr = str;
+    enemyHp = hp;
+    
+    let result = "N/A";
+
     print("Choose an action:\n\tAttack\n\tFlee");
     function processInput(input) {
 
         while (true) {
             input = lower(input);
+
             if (input === "attack") {
-                attack();
+                result = attack();
             } else if (input === "flee") {
                 return "flee";
             } else {
                 print("Please select a valid option.");
             }
-        }
-    }
 
-    waitForInput(processInput);
+            if (result === "victory") {
+                return "win";
+            }
+        }
+
+        waitForInput(processInput);
+    }
 }
 
+function lose() {
+    print("<h1>You got the BAD ending!</h1>");
+    print("You lost one of the compititions and now your dragon in injured AND you missed the vet appointment!");
+
+    gameActive = false;
+}
+
+function compWin() {
+    if (hasDoggo) {
+        print("<h1>You got the BEST ending!</h1>");
+        print("You got the legendary (albiet badly drawn) Dog of the Mountains, and won the compitition with them!");
+    } else {
+        print("<h1>You got the GREAT ending!</h1>");
+        print("You won the comoetition!");
+    }
+
+    gameActive = false;
+}
 
 //Make one function for each location
 function house() {
@@ -171,7 +203,7 @@ function house() {
             waitForInput(house);
         } else {
             stayHere();
-            waitThenCall(backyard);
+            waitThenCall(house);
         }
     }
 
@@ -574,7 +606,7 @@ function forest() {
 
                         forestUse += 1
 
-                        waitForInput(lake);
+                        waitForInput(forest);
                     } else {
                         print("Your dragon looks exausted from the fighting. Maybe in another place...");
                     }
@@ -651,7 +683,7 @@ function lake() {
                         townHall();
                     } else {
                         stayHere();
-                        waitThenCall(forest);
+                        waitThenCall(lake);
                     }
                 }
             
@@ -690,7 +722,7 @@ function lake() {
                         townHall();
                     } else {
                         stayHere();
-                        waitThenCall(forest);
+                        waitThenCall(lake);
                     }
                 }
             
@@ -708,7 +740,7 @@ function lake() {
 
 function competition() {
     clear();
-    print("\nYou are in your the competition building!");
+    print("\nYou are in the competition building!");
 
     if (checkedIn === false) {
         print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tCheck in\n\tVending Machine");
@@ -726,22 +758,12 @@ function competition() {
                         townHall();
                     } else {
                         stayHere();
-                        waitThenCall(house);
+                        waitThenCall(competition);
                     }
                 }
             
                 waitForInput(processInput);
 
-        } else if (input === "look around" || input === "look") {
-            print("\n You see your pet dragon and a note on the fridge.");
-
-            printAscii(asciiDragon);
-            printAscii(asciiNote);
-
-            print("Click enter to continue.");
-            houseLook = true;
-
-            waitForInput(house);
             } else if (input === "vending machine") {
                 print("<h1>You win the GOOD ending</h1>");
                 print("You may not have done anything useful, but you have SNACKS!");
@@ -754,7 +776,7 @@ function competition() {
 
                     checkedIn = true;
                     
-                    waitForInput(house);
+                    waitForInput(competition);
                 } else {
                     print("The front desk attendant says to return with the poster for the event to join.");
 
@@ -762,25 +784,29 @@ function competition() {
                 }
         } else {
             stayHere();
-            waitThenCall(backyard);
+            waitThenCall(competition);
         }
     }
 
     } else {
-        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around\n\tRead note\n\tGet dragon");
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tCheck in\n\tVending Machine");
         function processInput(input) {
             input = lower(input);
 
             if (input === "move") {
-                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tBackyard");
+                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tEasy Competition\n\tMedium Competition\n\tHard Competition");
 
                 function processInput(input) {
                     input = input.toLowerCase();
 
-                    if (input === "backyard" || input === "by") {
-                        backyard();
-                    } else if (input === "town hall") {
+                    if (input === "town hall") {
                         townHall();
+                    } else if (input === "easy competition" || input === "easy") {
+                        easyComps();
+                    } else if (input === "medium competition" || input === "medium") {
+                        midComps();
+                    } else if (input === "hard competition" || input === "hard") {
+                        hardComps();
                     } else {
                         stayHere();
                         waitThenCall(competition);
@@ -798,6 +824,258 @@ function competition() {
                 print("The front desk attendant says that you are already checked in.");
 
                 waitThenCall(competition);
+            } else {
+                stayHere();
+                waitThenCall(competition);
+            }
+        }
+    }
+
+    waitForInput(processInput);
+}
+
+function easyComps() {
+    clear();
+
+    if (!wonEasy) {
+        print("You enter the easy competition room, where a scrawny man stares you down.");
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tBattle");
+        function processInput(input) {
+            input = lower(input);
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tCompetitions");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "competitions" || input === "competition" || input === "comp" || input === "comps") {
+                        competition();
+                    } else {
+                        stayHere();
+                        waitThenCall(easyComps);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+        } else if (input === "battle" || input === "fight") {
+            let result = "N/A";
+
+            print("You send your dragon against the opponent, who in turn sends their own dragon.");
+
+            result = battle(2,4);
+
+            if (result === "win") {
+                print("You won the easy match!!!");
+
+                wonEasy = true;
+
+                if (wonEasy && wonMid && wonHard) {
+                    compWin();
+                }
+
+                waitThenCall(easyComps);
+            } else if (result === "flee") {
+                print("You fled the match out to the town hall!");
+
+                waitThenCall(townHall);
+            }
+        } else {
+            stayHere();
+            waitThenCall(easyComps);
+        }
+    }
+
+    } else {
+        print("The scrawny man from earlier looks at you in suprise at how you had defeated him.")
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove");
+        function processInput(input) {
+            input = lower(input);
+
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tCompetition");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "competitions" || input === "competition" || input === "comp" || input === "comps") {
+                        competition();
+                    } else {
+                        stayHere();
+                        waitThenCall(competition);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else {
+                stayHere();
+                waitThenCall(competition);
+            }
+        }
+    }
+
+    waitForInput(processInput);
+}
+
+function midComps() {
+    clear();
+
+    if (!wonMid) {
+        print("You enter the easy competition room, where a youthful and fit opponent surveys you.");
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tBattle");
+        function processInput(input) {
+            input = lower(input);
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tCompetitions");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "competitions" || input === "competition" || input === "comp" || input === "comps") {
+                        competition();
+                    } else {
+                        stayHere();
+                        waitThenCall(midComps);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+        } else if (input === "battle" || input === "fight") {
+            let result = "N/A";
+
+            print("You send your dragon against the opponent, who in turn sends their own dragon.");
+            
+            result = battle(3,6);
+
+            if (result === "win") {
+                print("You won the medium match!!!");
+
+                wonEasy = true;
+
+                if (wonEasy && wonMid && wonHard) {
+                    compWin();
+                }
+
+                waitThenCall(midComps);
+            } else if (result === "flee") {
+                print("You fled the match out to the town hall!");
+
+                waitThenCall(townHall);
+            }
+        } else {
+            stayHere();
+            waitThenCall(midComps);
+        }
+    }
+
+    } else {
+        print("The young challenger from earlier looks at you in suprise at how you had defeated them.")
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove");
+        function processInput(input) {
+            input = lower(input);
+
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tCompetition");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "competitions" || input === "competition" || input === "comp" || input === "comps") {
+                        competition();
+                    } else {
+                        stayHere();
+                        waitThenCall(competition);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else {
+                stayHere();
+                waitThenCall(competition);
+            }
+        }
+    }
+
+    waitForInput(processInput);
+}
+
+function hardComps() {
+    clear();
+
+    if (!wonHard) {
+        print("You enter the hard competition room, where a battle-scarred warrior radiates feirceness.");
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tBattle");
+        function processInput(input) {
+            input = lower(input);
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tCompetitions");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "competitions" || input === "competition" || input === "comp" || input === "comps") {
+                        competition();
+                    } else {
+                        stayHere();
+                        waitThenCall(hardComps);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+        } else if (input === "battle" || input === "fight") {
+            let result = "N/A";
+
+            print("You send your dragon against the opponent, who in turn sends their own dragon.");
+
+            result = battle(5,9);
+
+            if (result === "win") {
+                print("You won the hard match!!!");
+
+                wonHard = true;
+
+                if (wonEasy && wonMid && wonHard) {
+                    compWin();
+                }
+
+                waitThenCall(hardCompsComps);
+            } else if (result === "flee") {
+                print("You fled the match out to the town hall!");
+
+                waitThenCall(townHall);
+            }
+        } else {
+            stayHere();
+            waitThenCall(hardComps);
+        }
+    }
+
+    } else {
+        print("The scarred man bows down to you and declares you a worthy victor, and his dragon brings you what seems to be a jagged trophey from some other competition.");
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove");
+        function processInput(input) {
+            input = lower(input);
+
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tCompetition");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "competitions" || input === "competition" || input === "comp" || input === "comps") {
+                        competition();
+                    } else {
+                        stayHere();
+                        waitThenCall(competition);
+                    }
+                }
+            
+                waitForInput(processInput);
+
             } else {
                 stayHere();
                 waitThenCall(competition);
