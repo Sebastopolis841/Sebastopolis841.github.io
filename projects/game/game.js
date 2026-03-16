@@ -255,6 +255,8 @@ function townHall() {
                     forest();
                 } else if (input === "lake") {
                     lake();
+                } else if (input === "competitions" || input === "competition" || input === "comp" || input === "comps") {
+                    competition();
                 } else {
                     stayHere();
                     waitThenCall(townHall);
@@ -507,8 +509,10 @@ function vet() {
                 waitForInput(processInput);
 
             } else if (input === "check in") {
-                print("<h1>You win the boring ending</h1>")
-                print("You got the dragon to the vet. BOOORING!")
+                print("<h1>You win the boring ending</h1>");
+                print("You got the dragon to the vet. BOOORING!");
+
+                gameActive = false;
             } else {
                 stayHere();
                 waitThenCall(vet);
@@ -690,9 +694,108 @@ function lake() {
     waitForInput(processInput)
 }
 
-//finally, make sure you customize this to tell it what should happen at the
-//very start. For this simple example, any input will bring you
-//to townHall
+function competition() {
+    clear();
+    print("\nYou are in your the competition building!");
+
+    if (checkedIn === false) {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tCheck in\n\tVending Machine");
+        function processInput(input) {
+            input = lower(input);
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tEasy competition\n\tMedium competitionn\n\tHard competition\n\n\t(For the competition rooms, just type in 'Easy', 'Medium', or 'Hard'.");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "easy competition" || input === "medium competition" || input === "hard competition" || input === "easy" || input === "medium" || input === "hard") {
+                        print("The front desk attendant stops you and tells you to check in.");
+                    } else if (input === "town hall") {
+                        townHall();
+                    } else {
+                        stayHere();
+                        waitThenCall(house);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+        } else if (input === "look around" || input === "look") {
+            print("\n You see your pet dragon and a note on the fridge.");
+
+            printAscii(asciiDragon);
+            printAscii(asciiNote);
+
+            print("Click enter to continue.");
+            houseLook = true;
+
+            waitForInput(house);
+            } else if (input === "vending machine") {
+                print("<h1>You win the GOOD ending</h1>");
+                print("You may not have done anything useful, but you have SNACKS!");
+
+                gameActive = false;
+            } else if (input === "check in") {
+                if (hasPoster) {
+                    print("You checked in!");
+                    print("Click enter to continue.");
+
+                    checkedIn = true;
+                    
+                    waitForInput(house);
+                } else {
+                    print("The front desk attendant says to return with the poster for the event to join.");
+
+                    waitThenCall(competition)
+                }
+        } else {
+            stayHere();
+            waitThenCall(backyard);
+        }
+    }
+
+    } else {
+        print("\nWhat would you like to do? Say one of these choices: \n\tMove\n\tLook around\n\tRead note\n\tGet dragon");
+        function processInput(input) {
+            input = lower(input);
+
+            if (input === "move") {
+                print("\nWhere do you want to go next? Say one of these choices: \n\tTown Hall\n\tBackyard");
+
+                function processInput(input) {
+                    input = input.toLowerCase();
+
+                    if (input === "backyard" || input === "by") {
+                        backyard();
+                    } else if (input === "town hall") {
+                        townHall();
+                    } else {
+                        stayHere();
+                        waitThenCall(competition);
+                    }
+                }
+            
+                waitForInput(processInput);
+
+            } else if (input === "vending machine") {
+                print("<h1>You win the GOOD ending</h1>");
+                print("You may not have done anything useful, but you have SNACKS!");
+
+                gameActive = false;
+            } else if (input === "check in") {
+                print("The front desk attendant says that you are already checked in.");
+
+                waitThenCall(competition);
+            } else {
+                stayHere();
+                waitThenCall(competition);
+            }
+        }
+    }
+
+    waitForInput(processInput);
+}
+
 function start() {
     print("Welcome to my game! Press enter to start");
 
