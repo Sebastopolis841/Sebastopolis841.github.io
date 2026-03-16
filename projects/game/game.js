@@ -62,7 +62,7 @@ let enemyStr = null;
 let enemyHp = null;
 
 let lakeUse = 0;
-let ForestUse = 0;
+let forestUse = 0;
 
 let wonEasy = false;
 let wonMid = false;
@@ -74,7 +74,7 @@ let checkedIn = false;
 function random(min,max) {
     max += 1 - min;
 
-    return Math.floor(Math.random() * max) - min;
+    return Math.floor(Math.random() * max - min + 1) + min;
 }
 
 function attkRand() {
@@ -564,11 +564,17 @@ function forest() {
 
                     waitForInput(forest);
                 } else if (input === "train") {
-                    if (!(forestUse === 5)) {
+                    if (forestUse <= 5) {
                         print("Your dragon takes on a woodland animal. It comes back with a few nicks and scratches, but overall looks hardier now.")
                         drgnHp += random(1,2);
                         drgnTempHP = drgnHp;
                         print("Your dragon now has " + drgnHp + " HP!")
+
+                        forestUse += 1
+
+                        waitForInput(lake);
+                    } else {
+                        print("Your dragon looks exausted from the fighting. Maybe in another place...");
                     }
                 } else {
                     stayHere();
@@ -650,10 +656,16 @@ function lake() {
                 waitForInput(processInput);
 
             } else if (input === "fight") {
-                if (!(forestUse === 5)) {
-                    print("Your dragon leaps into the lake. It comes back with a a large fish in it's mouth and claws.")
+                if (lakeUse <= 5) {
+                    print("Your dragon leaps into the lake. It comes back with a a large fish in it's mouth and claws.");
                     drgnStr += random(1,2);
-                    print("Your dragon now has " + drgnStr + " strength!")
+                    print("Your dragon now has " + drgnStr + " strength!");
+
+                    lakeUse += 1;
+
+                    waitForInput(lake);
+                } else {
+                    print("Your dragon looks exausted from the fighting. Maybe in another place...");
                 }
             } else {
                 stayHere();
@@ -661,7 +673,7 @@ function lake() {
             }
         }
     } else {
-        print("What would you like to do? Say one of these choices: \n\tMove")
+        print("What would you like to do? Say one of these choices: \n\tMove");
         function processInput(input) {
             input = input.toLowerCase();
             if (input === "move") {
