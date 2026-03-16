@@ -268,6 +268,8 @@ function townHall() {
 
             printAscii(asciiNote);
 
+            print("You grab the poster and put it in your bag.");
+
             print("Click enter to continue.");
 
             hasPoster = true;
