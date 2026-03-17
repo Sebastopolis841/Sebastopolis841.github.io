@@ -145,6 +145,8 @@ function battle(str,hp) {
 }
 
 function lose() {
+    clear();
+
     print("<h1>You got the BAD ending!</h1>");
     print("You lost one of the compititions and now your dragon in injured AND you missed the vet appointment!");
 
@@ -153,9 +155,13 @@ function lose() {
 
 function compWin() {
     if (hasDoggo) {
+        clear();
+
         print("<h1>You got the BEST ending!</h1>");
         print("You got the legendary (albiet badly drawn) Dog of the Mountains, and won the compitition with them!");
     } else {
+        clear();
+        
         print("<h1>You got the GREAT ending!</h1>");
         print("You won the comoetition!");
     }
