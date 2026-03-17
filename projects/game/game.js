@@ -139,10 +139,9 @@ function battle(str,hp) {
             if (result === "victory") {
                 return "win";
             }
-        }
-
-        waitForInput(processInput);
+        } 
     }
+    waitForInput(processInput);
 }
 
 function lose() {
