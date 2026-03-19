@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Breakout!!!</title>
+
+        <style>
+
+        body {
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Comic Sans', sans-serif;
+        }
+
+	    canvas {
+		    border: 1px solid black;
+            grid-area: canvas;
+	    }
+
+        #startCenter {
+            width: 100%;
+            height: 100%;
+            grid-area: button;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #startGame {
+            width: 200px;
+            height:80px;
+            border-radius: 50px;
+            background-color: blue;
+            border-width: 0;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .grid {
+            display: grid;
+            grid:
+                'canvas button'
+                /1000px 1fr;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="grid">
+            <canvas id="myCanvas" width=1000 height=800>
+            </canvas>
+
+            <script src="brkwt.js">
+            </script>
+
+            <div id="startCenter">
+                <button id="startGame" onclick="game();">Start Game</button>
+            </div>
+        </div>
+    </body>
+</html>
