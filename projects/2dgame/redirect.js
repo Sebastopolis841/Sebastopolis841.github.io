@@ -1,1 +1,0 @@
-window.location.replace("https://greetingsplayer1.github.io/Game-Project/");
