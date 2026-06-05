@@ -1,8 +1,23 @@
 body {
-    background-color: green;
-    color: yellow;
+    margin-top: 60px;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
-a {
-    color: lightgoldenrodyellow;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#bigPhoto {
+    border: 4px solid rgb(19, 112, 152);
+    background-color: green;
+    width: 60%;
+    border-radius: 50px;
+}
+
+#meImage {
+    margin: 5%;
+    width: 90%;
 }
