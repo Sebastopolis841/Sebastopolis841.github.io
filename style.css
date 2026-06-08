@@ -51,3 +51,23 @@ body {
     color: #fffbe0;
     top: 16px;
 }
+
+#labels {
+    grid-area: labels;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 15px;
+}
+
+#labels a {
+    font-size: 18px;
+    color: #fffbe0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#spacer {
+    width: 30px;
+    background-color: transparent;
+}
