@@ -1,5 +1,5 @@
 body {
-    margin-top: 70px;
+    margin-top: 80px;
     font-family: 'Trebuchet MS', sans-serif;
     background-color: #fffbe0;
 }
@@ -9,6 +9,14 @@ a {
     color: #dd9000;
     text-decoration: none;
     cursor: pointer;
+}
+
+h2 {
+    margin-left: 15px;
+}
+
+dl {
+    margin-left: 3px;
 }
 
 .center {
@@ -65,7 +73,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: right;
-    gap: 15px;
+    gap: 30px;
     margin-right: 45px;
 }
 
