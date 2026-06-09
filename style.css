@@ -31,6 +31,8 @@ dl {
     background-color: green;
     width: 60%;
     border-radius: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 #meImage {
@@ -157,16 +159,16 @@ form {
 }
 
 input {
-        width: 270px;
-        font-family: 'Trebuchet MS', sans-serif;
-        font-size: 15px;
+    width: 270px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 15px;
 }
 
 textarea {
-        width: 270px;
-        max-width: 270px;
-        min-width: 270px;
-        max-height: 100px;
-        font-family: 'Trebuchet MS', sans-serif;
-        font-size: 15px;
+    width: 270px;
+    max-width: 270px;
+    min-width: 270px;
+    max-height: 100px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 15px;
 }
