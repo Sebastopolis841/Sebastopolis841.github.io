@@ -58,6 +58,7 @@ body {
     align-items: center;
     justify-content: right;
     gap: 15px;
+    margin-right: 45px;
 }
 
 #labels a {
@@ -65,9 +66,4 @@ body {
     color: #fffbe0;
     font-weight: bold;
     text-decoration: none;
-}
-
-#spacer {
-    width: 30px;
-    background-color: transparent;
 }
