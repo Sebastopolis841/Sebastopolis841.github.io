@@ -4,6 +4,13 @@ body {
     background-color: #fffbe0;
 }
 
+a {
+    font-weight: bold;
+    color: #dd9000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -83,6 +90,7 @@ footer {
 
 footer a {
     color: #fffbe0;
+    text-decoration: underline;
 }
 
 #top {
