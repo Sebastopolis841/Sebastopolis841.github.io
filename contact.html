@@ -20,6 +20,41 @@
 			</div>
 		</div>
 
+        <script>
+            function openForm() {
+                document.getElementById("booking").style.display = "block";
+                document.getElementById("blur").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("booking").style.display = "none";
+                document.getElementById("blur").style.display = "none";
+            }
+        </script>
+
+        <div id="blur"></div>
+        <div class="center">
+            <form action="https://formsubmit.co/sebastiannmseguin@gmail.com" method="POST" id="booking"> <!--Code for the form-->
+                <button id="close" type="reset" onclick="closeForm()">X</button>
+
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" required><br>
+
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="desc">Breif Description of Website:</label><br>
+                <textarea id="desc" name="desc" required></textarea><br>
+                <br>
+
+                <button type="submit" onclick="closeForm()">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </div>
+
         <h1>Contact Me</h1>
 
         <h2>Why to Contact Me:</h2>
@@ -35,7 +70,7 @@
 
         <br><br>
         <div class="center">
-            <button>Contact Form</button>
+            <button onclick="openForm()">Contact Form</button>
         </div>
 
         <br><br><br>
