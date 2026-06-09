@@ -68,3 +68,43 @@ body {
     font-weight: bold;
     text-decoration: none;
 }
+
+footer {
+    position: absolute;
+    background-color: green;
+    width: 100vw;
+    height: 200px;
+    color: #fffbe0;
+    left: 0;
+    text-align: center;
+    border-top: 4px solid #137098;
+    font-size: 17px;
+}
+
+footer a {
+    color: #fffbe0;
+}
+
+#top {
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 0;
+    background-color: transparent;
+}
+
+#ftrgrid {
+    display: grid;
+    grid:
+        'sct1 sct2' 100%
+        /1fr 1fr;
+    margin-top: 30px;
+}
+
+#area1 {
+    grid-area: sct1;
+}
+
+#area2 {
+    grid-area: sct2;
+}
