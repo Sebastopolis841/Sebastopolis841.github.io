@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Sebastian's Portfolio - Home Page</title>
+		<title>Sebastian's Portfolio - Contact Me</title>
 
 		<link rel="icon" href="Images/favicon.png" type="image/png">
 		<link rel="stylesheet" href="style.css" type="text/CSS">
@@ -9,11 +9,11 @@
 	<body>
 		<span id="top"></span>
 		<div id="navbar">
-            <a href="/">
+            <a id="icons" href="/">
 			    <img src="Images/favicon.png" height="90%" alt="Favicon" id="icon">
+			    <span id="iconText">Sebastian Seguin</span>
             </a>
-
-			<span id="iconText">Sebastian Seguin</span>
+            
 			<div id="labels">
 				<a href="/">Home</a>
                 <a href="/contact.html">Contact Me</a>
@@ -23,19 +23,19 @@
 
         <script>
             function openForm() {
-                document.getElementById("booking").style.display = "block";
+                document.getElementById("form").style.display = "block";
                 document.getElementById("blur").style.display = "block";
             }
 
             function closeForm() {
                 document.getElementById("booking").style.display = "none";
-                document.getElementById("blur").style.display = "none";
+                document.getElementById("form").style.display = "none";
             }
         </script>
 
         <div id="blur"></div>
         <div class="center">
-            <form action="https://formsubmit.co/sebastiannmseguin@gmail.com" method="POST" id="booking"> <!--Code for the form-->
+            <form action="https://formsubmit.co/sebastiannmseguin@gmail.com" method="POST" id="form"> <!--Code for the form-->
                 <button id="close" type="reset" onclick="closeForm()">X</button>
 
                 <label for="fname">First name:</label><br>
