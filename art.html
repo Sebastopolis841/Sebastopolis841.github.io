@@ -21,6 +21,25 @@
 			</div>
 		</div>
 
+        <script>
+            function openImg(id) {
+                document.getElementById("dark").style.display = "flex";
+                document.getElementById(id).style.display = "block";
+            }
+
+            function hideImg() {
+                document.getElementById("dark").style.display = "none";
+
+                for (img of document.getElementById("dark").getElementsByTagName("img")) {
+                    img.style.display = "none";
+                }
+            }
+        </script>
+
+        <div id="dark" onclick="hideImg()">
+            <img src="Images/phases.png" id="phases">
+        </div>
+
         <h1>Art</h1>
 
         <h2>Yes, I Do Art</h2>
@@ -43,22 +62,22 @@
         <hr>
 
         <div class="lineUp">
-            <div class="card">
+            <div class="card" onclick="openImg()">
                 <h3>Acrilic Sea Monster</h3>
                 <img src="Images/SeaMonsterPaint.png" alt="Acrylic painted sea monster made by me.">
                 <p>This is a sea monster that I painted using acrylic paints for my Art I final acrylic project.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openImg('phases')">
                 <h3>Stages of Trees</h3>
                 <img src="Images/phases.png" alt="Acrylic painted scene of trees made by me.">
                 <p>This is a scene of trees that I painted with acrylics to be presented at a gallery between other students at my school.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openImg()">
                 <h3>Complimentary Colors</h3>
                 <img src="Images/complimentary.png" alt="Cliffside painting with only green and red.">
                 <p>An acrylic painting that I made that uses only the complimentary colors green and red.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openImg()">
                 <h3>Monochromatic Painting</h3>
                 <img src="Images/monochromatic.jpg" alt="An acrylic painting of a landscape that I made using only the color green.">
                 <p>An acrylic painting of a landscape that I made using only the color green.</p>
@@ -73,12 +92,12 @@
         <hr>
 
         <div class="lineUp">
-            <div class="card">
+            <div class="card" onclick="openImg()">
                 <h3>Felt Penguin</h3>
                 <img src="Images/penguin.jpg" alt="Felt penguin in a top hat that I made.">
                 <p>This is a felt penguin that I made with a top hat. I had a dice, and when combined the penguin becomes a gambling penguin.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openImg()">
                 <h3>Felt Sea Monster</h3>
                 <img src="Images/seaMonsterFelt.jpg" alt="Felt sea monster made by me.">
                 <p>This is a felt sea monster that I made with a group. Other people made parts of the body, with full choice for the color scheme.</p>

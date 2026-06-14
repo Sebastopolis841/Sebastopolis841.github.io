@@ -7,7 +7,6 @@ body {
 a {
     font-weight: bold;
     color: #dd9000;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -47,7 +46,7 @@ dl {
     display:grid;
     grid:
         'icons labels' 60px
-        /1fr 2fr;
+        /34% 66%;
     position: fixed;
     top: 0;
     left: 0;
@@ -253,4 +252,27 @@ hr {
     background-color: black;
     border: 1px solid black;
     border-radius: 100%;
+}
+
+#dark {
+    display: none;
+    position: fixed;
+    background-color: #00000077;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+#dark img {
+    display: none;
+    transform: translateY(-64px);
+    max-height: 75vh;
+    max-width: 90vw;
+    min-height: 10vh;
+    min-width: 10vw;
+    border-radius: 10%;
 }
