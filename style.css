@@ -189,6 +189,7 @@ textarea {
     transition: transform 0.3s ease;
     border-radius: 30px;
     height: 275px;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -270,8 +271,8 @@ hr {
 #dark img {
     display: none;
     transform: translateY(-64px);
-    max-height: 75vh;
-    max-width: 90vw;
+    max-height: 65vh;
+    max-width: 80vw;
     min-height: 10vh;
     min-width: 10vw;
     border-radius: 10%;
