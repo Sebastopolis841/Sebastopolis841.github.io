@@ -268,7 +268,7 @@ hr {
     align-items: center;
 }
 
-#dark img {
+#dark img, video {
     display: none;
     transform: translateY(-64px);
     max-height: 65vh;
