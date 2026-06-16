@@ -35,8 +35,10 @@
 
         <div id="blur"></div>
         <div class="center">
-            <form action="https://formsubmit.co/sebastianmseguin@gmail.com" method="POST" id="form"> <!--Code for the form-->
+            <form action="https://formsubmit.co/sebastianmseguin@gmail.com" method="POST" id="form">
                 <button id="close" type="reset" onclick="closeForm()">X</button>
+
+                <input type="hidden" name="_captcha" value="false">
 
                 <label for="fname">First name:</label><br>
                 <input type="text" id="fname" name="fname" required><br>
