@@ -30,6 +30,7 @@
             function openVideo(id) {
                 document.getElementById("dark").style.display = "flex";
                 document.getElementById(id).style.display = "block";
+		document.getElementById(id).currentTime = 0;
                 document.getElementById(id).play();
             }
 
@@ -43,6 +44,7 @@
                 for (video of document.getElementById("dark").getElementsByTagName("video")) {
                     video.style.display = "none";
                     video.currentTime = 0;
+		    video.pause();
                 }
             }
         </script>
